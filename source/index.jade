@@ -1,0 +1,65 @@
+doctype html
+html(lang="en" ng-app="MonterailApp")
+  head
+    title= pageTitle
+    script(type='text/javascript' src="vendor/js/angular.min.js")
+    script(type='text/javascript' src="js/app.js")
+    link(rel="stylesheet" type="text/css" href="style.css")
+  body(ng-controller="QuestionsController")
+    header.header
+      .header--inner
+        .header__left
+          h1.entry-title Questions
+          button.add-item(type="button")
+        .header__right
+          form(action="")
+            .form-group
+              label
+                input(
+                  type="radio" 
+                  name="radio-my-shelf-questions" 
+                  value="my-shelf-questions"
+                ) 
+                | My shelf
+            .form-group
+              label
+                input(
+                  type="radio" 
+                  name="radio-all-questions" 
+                  value="allf-questions"
+                ) 
+                | All questions
+          .qustions__filter
+            p Sort by:
+            button.active(type="button") recent
+            button(type="button") hot  
+    .wrapper
+      .wrapper--inner
+        .question(ng-repeat="question in questions")
+          .question__top
+            .avatar-container
+              img.author-avatar-img(
+                alt="{{question.author.name}}" 
+                src="{{question.author.avatar}}"
+              )
+            .question-header
+              p 
+                a.author-name(href="#") {{ question.author.name }}
+                | IS ASKING
+              h2 {{question.title}}
+          .question__bottom
+            .question__bottom--left
+              .question__bottom__col.question__bottom__col--first 
+                p asked
+              .question__bottom__col(ng-repeat="activities in question.user_involved")
+                img.author-avatar-img(
+                  alt="{{activities.name}}" 
+                  src="{{activities.avatar}}"
+                )
+                p {{ activities.role }}
+            .question__bottom-right
+              p {{question.discusions}} related discusions
+              p {{question.peers}} peers involved
+              p {{question.conversations}} conversations
+        button.load-questions(type="button") load more questions
+          

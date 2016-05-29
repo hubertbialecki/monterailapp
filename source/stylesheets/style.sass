@@ -1,0 +1,42 @@
+$colour_body: #ffe1ad
+$colour_white: #fff
+$colour_light_blue: #dff3fd
+$wrapper_width: 800px
+$qustion_max_width: 595px
+@import "normalize"
+
+body
+  max-width: 100%
+  background-color: $colour_body
+
+.header
+  width: 100%
+  background: $colour_white
+  padding-top: 50px
+
+  &--inner
+    max-width: $wrapper_width
+    margin: auto
+
+  .entry-title
+    margin-top: 0
+
+.wrapper
+  margin: 0 40px
+  background-color: $colour-white
+  &--inner
+    max-width: $wrapper_width
+    margin: auto
+
+.question__top
+  max-width: $qustion_max_width
+  background-color: $colour_light_blue
+
+.avatar-container
+  width: 90px
+  display: inline-block
+  text-align: center
+  padding-top: 10px
+
+.question-header
+  display: inline-block
