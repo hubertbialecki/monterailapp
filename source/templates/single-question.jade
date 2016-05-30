@@ -37,9 +37,34 @@ header.header.header__single__question(ng-controller="QuestionsController")
     
     .discussion__wrapper(ng-controller="DiscusionsController")
       p 2 peers already answered {{ question.author.name }}
-      ul.discussion_list(ng-repeat="discusion in discusions")
-        li(ng-repeat="comment in discusion.comments") {{ comment.content }}
-          ul(ng-show="comment.replies.length > 0")
-            li(ng-repeat="replie in comment.replies") {{ replie.content }}
+      div.discussion_list(ng-repeat="discusion in discusions")
+        .discussion__comment(ng-repeat="comment in discusion.comments") 
+          .comment__wrapper
+            .comment__avatar 
+              img.author-avatar-img(
+                alt="{{ comment.name }}" 
+                src="{{ comment.avatar }}"
+              )
+            .comment__content
+              .comment__content--left
+                .comment__content--entry
+                  h4 {{ comment.author }}
+                p {{ comment.content }}
+              .comment__content--right
+                {{ comment.votes }}
+          .discusion__replies(ng-show="comment.replies.length > 0")
+            .comment__wrapper(ng-repeat="replie in comment.replies")
+              .comment__avatar 
+                img.author-avatar-img(
+                  alt="{{ replie.name }}" 
+                  src="{{ replie.avatar }}"
+                )
+              .comment__content
+                .comment__content--left
+                  .comment__content--entry
+                    h4 {{ replie.author }}
+                  p {{ replie.content }}
+                .comment__content--right
+                  {{ replie.votes }}
             
         

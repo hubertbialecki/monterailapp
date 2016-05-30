@@ -34,6 +34,14 @@ app.controller('SingleQuestionsController', function($scope,  getData){
   });
 });
 
+app.controller('SortingController', function($scope){
+  $scope.filter = 'recent';
+  this.selectFilter = function(selectedFilter){
+    $scope.filter = selectedFilter;
+  }
+});
+
+
 app.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/main");
   $stateProvider

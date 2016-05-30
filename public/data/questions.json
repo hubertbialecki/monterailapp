@@ -6,6 +6,7 @@
          "name":"Eva",
          "avatar":"assets/images/avatar1.png"
       },
+      "hot": true,
       "discusions":2,
       "peers":6,
       "conversations":3,

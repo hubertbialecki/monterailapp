@@ -717,3 +717,6 @@ body {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%); }
+
+.discusion__replies {
+  padding-left: 30px; }

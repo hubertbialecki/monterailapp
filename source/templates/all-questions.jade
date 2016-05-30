@@ -25,11 +25,11 @@ header.header
             ) 
             label.radio-button--label(for="filter2")
               | All questions
-      .qustions__filter.qustions__filter--sorting
+      .qustions__filter.qustions__filter--sorting(ng-controller="SortingController as sortingContr")
         span Sort by:
-        button.active.text-button(type="button") recent
+        button.active.text-button(type="button" ng-click="sortingContr.selectFilter('recent')") recent
         span or
-        button.text-button.text-button-right(type="button") hot  
+        button.text-button.text-button-right(type="button" ng-click="sortingContr.selectFilter('hot')") hot  
     .clear
     .nav__search
       .nav__search--left
@@ -40,7 +40,7 @@ header.header
         
 .wrapper(ng-controller="QuestionsController")
   .wrapper--inner
-    .question(ng-repeat="question in questions | filter: filterSearch")
+    .question(ng-repeat="question in questions | filter: filterSearch | orderBy: filter")
       .question__top
         .avatar-container
           img.author-avatar-img(
