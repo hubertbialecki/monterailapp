@@ -1,0 +1,82 @@
+header.header
+  .header--inner
+    .header__left
+      h1.entry-title Questions
+      button.add-item(type="button")
+    .header__right
+      .qustions__filter.qustions__filter--type
+        form(action="")
+          .form-group
+            input.radio-button(
+              type="radio"
+              id="filter1"  
+              name="radio-filter" 
+              value="my-shelf-questions"
+              checked=""
+            ) 
+            label.radio-button--label(for="filter1")
+              | My shelf
+          .form-group
+            input.radio-button(
+              type="radio"
+              id="filter2" 
+              name="radio-filter" 
+              value="all-questions"
+            ) 
+            label.radio-button--label(for="filter2")
+              | All questions
+      .qustions__filter.qustions__filter--sorting
+        span Sort by:
+        button.active.text-button(type="button") recent
+        span or
+        button.text-button.text-button-right(type="button") hot  
+    .clear
+    .nav__search
+      .nav__search--left
+        input.nav__search--input(ng-model="searchText" type='text' placeholder='Search questions')
+      .nav__search--right
+        button.nav__search--button(ng-click="filterSearch = searchText") Search
+      .clear
+        
+.wrapper(ng-controller="QuestionsController")
+  .wrapper--inner
+    .question(ng-repeat="question in questions | filter: filterSearch")
+      .question__top
+        .avatar-container
+          img.author-avatar-img(
+            alt="{{question.author.name}}" 
+            src="{{question.author.avatar}}"
+          )
+        .question-header
+          p 
+            a.author-name {{ question.author.name }}
+            |  IS ASKING
+          h2 
+            a(ui-sref="single") {{question.title}}
+      .question__bottom
+        .question__bottom--left
+          .qustion__bottom--blue
+            .question__bottom__col.question__bottom__col--first 
+              p.activities_role asked
+          .question__bottom--flex
+            .question__bottom__col.question__bottom__col--more(ng-show="question.user_involved.length > 5")
+              span {{ question.user_involved.length - 5 }}
+              p.activities_role more activities
+            .question__bottom__col(ng-repeat="activities in question.user_involved")
+              img.author-avatar-img(
+                alt="{{activities.name}}" 
+                src="{{activities.avatar}}"
+              )
+              p.activities_role {{ activities.role }}
+            .clear
+        .question__bottom--right
+          p 
+            span {{question.discusions}} 
+            | related discusions
+          p 
+            span {{question.peers}} 
+            | peers involved
+          p 
+            span {{question.conversations}} 
+            | conversations
+    button.load-questions(type="button") load more questions

@@ -1,0 +1,45 @@
+
+header.header.header__single__question(ng-controller="QuestionsController")
+  .header--inner
+    .header__left
+      h1.entry-title Questions
+      button.add-item(type="button")
+    .header__right
+      p last time discussed 1 day ago
+    .clear
+        
+.wrapper(ng-controller="SingleQuestionsController")
+  .single__question
+    .question(ng-repeat="question in questions")
+      .question__top
+        .avatar-container
+          img.author-avatar-img(
+            alt="{{question.author.name}}" 
+            src="{{question.author.avatar}}"
+          )
+        .question-header
+          p 
+            a.author-name {{ question.author.name }}
+            |  IS ASKING
+          h2 
+            a {{question.title}}
+        .clear
+      .single__question__bottom
+        .question__bottom--left
+          .question__bottom--content
+            .question__bottom--content-inner
+              p {{ question.content }}
+              button.vote__button(type="button") Give new answer
+        .question__bottom--right
+          .votes
+            span {{ question.votes }} upvotes
+        .clear 
+    
+    .discussion__wrapper(ng-controller="DiscusionsController")
+      p 2 peers already answered {{ question.author.name }}
+      ul.discussion_list(ng-repeat="discusion in discusions")
+        li(ng-repeat="comment in discusion.comments") {{ comment.content }}
+          ul(ng-show="comment.replies.length > 0")
+            li(ng-repeat="replie in comment.replies") {{ replie.content }}
+            
+        

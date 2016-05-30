@@ -1,0 +1,28 @@
+[
+  {
+    "id":1,
+    "comments":[
+      {
+        "author": "Patricia",
+        "date": "26.05.2016",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed libero lectus, mattis nec est quis",
+        "votes": "8",
+        "replies":[
+          {
+            "author": "David",
+            "date": "26.05.2016",
+            "content": "Replies Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed libero lectus, mattis nec est quis",
+            "votes": "2"
+          }
+        ]
+      },
+      {
+        "author": "Patricia",
+        "date": "26.05.2016",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed libero lectus, mattis nec est quis",
+        "votes": "8",
+        "replies":[]
+      }
+    ]
+  }
+]
