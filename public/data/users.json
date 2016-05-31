@@ -2,8 +2,10 @@
   {
     "id":1,
     "name": "Dr Halima",
+    "avatar":"assets/images/avatar_user.png",
     "memberfor": "2 years",
     "lastseen": "Sunday afternoon",
+    "acrivitylevel": 2,
     "achivements":[
       {
         "count": 49,
@@ -19,11 +21,36 @@
       },
       {
         "count": 10,
-        "name": "question"
+        "name": "questions"
       },
       {
         "count": 22,
         "name": "comments"
+      }
+    ],
+    "related_users":[
+      {
+        "name":"S.E.N Waweru",
+        "avatar": "assets/images/avatar1.png"
+      },
+      {
+        "name":"Patricia",
+        "avatar": "assets/images/avatar2.png"
+      },
+      {
+        "name":"Joseph Aluoch",
+        "avatar": "assets/images/avatar4.png"
+      }
+    ],
+    "hottes_discussion":[
+      {
+        "discusions":2,
+        "peers":6,
+        "conversations":3,
+        "upvotes": 19,
+        "author":"Andrew",
+        "avatar": "assets/images/avatar4.png",
+        "title": "Vegan diet to stop diabets progress"
       }
     ]
   }

@@ -57,8 +57,9 @@ header.header.header__single__question(ng-controller="QuestionsController")
             .comment__content
               .comment__content--left
                 .comment__content--entry
-                  h4 {{ comment.author }}
-                  span Commented it 
+                  h4 
+                    a(ui-sref="user") {{ comment.author }}
+                  span.text-gray-uppercase Commented it 
                   span.comment_date yesterday
                 p {{ comment.content }}
               .comment__content--right
@@ -80,8 +81,9 @@ header.header.header__single__question(ng-controller="QuestionsController")
               .comment__content
                 .comment__content--left
                   .comment__content--entry
-                    h4 {{ replie.author }}
-                    span Commented it 
+                    h4 
+                      a(ui-sref="user")  {{ replie.author }}
+                    span.text-gray-uppercase Commented it 
                     span.comment_date yesterday
                   p {{ replie.content }}
                 .comment__content--right

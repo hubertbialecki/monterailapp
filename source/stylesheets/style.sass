@@ -10,6 +10,7 @@ $color_gray_dark: #a9aaad
 $color_gray_font: #a7a9ac
 $color_black: #000
 $wrapper_width: 800px
+$modal_width: 850px
 $qustion_max_width: 595px
 =resetStyle( $background:none )
   border: 0
@@ -35,6 +36,7 @@ body
   max-width: 100%
   background-color: $color_body
   font-family: 'Cuprum', sans-serif
+  position: relative
 
 .header
   width: 100%
@@ -449,6 +451,10 @@ body
     padding-right: 45px
     padding-top: 30px
 
+.comment__content--entry
+  h4
+    display: inline-block
+
 .discussion__comment
   margin-bottom: 50px
 
@@ -500,10 +506,24 @@ body
   vertical-align: middle
 
 
-
-//modal
 .modal
-  height: 200px
-  width: 1000px
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 9998
+  background: rgba($color_black, 0.6)
+//modal
+.modal__content
+  max-width: $modal_width
+  width: 100%
   margin: auto
   background: $color_white
+  position: relative
+  z-index: 9999
+
+
+.text-gray-uppercase
+  text-transform: uppercase
+  color: $color_gray_font

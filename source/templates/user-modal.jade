@@ -1,11 +1,60 @@
-.modal.fade
+.modal.fade(ng-controller="UserController")
   .modal-dialog.modal-lg
-    .modal-content
-      .modal-header
+    .modal__content(ng-repeat="user in users")
+      .modal__header
         button.close(
           type="button" 
-          ng-click="close()"
+          ng-click="$dismiss()"
           data-dismiss="modal" 
           aria-hidden="true"
+        )  &times;
+      .user__thumb
+        img.author-avatar-img(
+          alt="{{ user.name }}" 
+          src="{{ user.avatar }}"
         )
-        | &times;
+      h2.user__name {{user.name}}
+      .user__accinfo
+        .user__accinfo--col
+          span.user__accinfo--label.text-gray-uppercase Member for 
+          span.user__accinfo--number {{ user.memberfor }}
+        .user__accinfo--col
+          span.user__accinfo--label.text-gray-uppercase Last seen 
+          span.user__accinfo--number {{ user.lastseen }}
+        .user__accinfo--col
+          span.user__accinfo--label.text-gray-uppercase Activity Level
+          span.user__accinfo--number {{ user.acrivitylevel }}
+        .clear
+      .user__main-content
+        .user__achivements
+          .user__achivements--box(ng-repeat="achivement in user.achivements" ng-class="achivement.name")
+            span.archivement-number {{ achivement.count }} 
+            span.archivement-name {{ achivement.name }}   
+          .clear
+        .related_users
+          p.text-gray-uppercase who joined the platform the same perdiod
+          .related_users__profiles
+            .related_users__profiles--box(ng-repeat="relatedUser in user.related_users")
+              img.author-avatar-img(
+                alt="{{ relatedUser.name }}" 
+                src="{{ relatedUser.avatar }}"
+              )
+              h4 {{ relatedUser.name }}  
+        .hottest__discussion
+          p.text-gray-uppercase the hottest discusion these days
+          .hottes__discussion--bg(ng-repeat="discussion in user.hottes_discussion")
+            img.author-avatar-img(
+              alt="{{ discussion.name }}" 
+              src="{{ discussion.avatar }}"
+            )
+            p {{ discussion.author }} 
+            p.text-gray-uppercase Found the guardian article
+            h4 {{ discussion.title }}
+            .discussin__stats
+              p {{ discussion.peers }} peers involved
+              p {{ discussion.discusions }} related discusions
+              p {{ discussion.conversations }} conversations
+              p {{ discussion.upvotes }} upvotes
+                
+              
+        

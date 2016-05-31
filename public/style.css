@@ -374,7 +374,8 @@ div {
 body {
   max-width: 100%;
   background-color: #ffe1ad;
-  font-family: 'Cuprum', sans-serif; }
+  font-family: 'Cuprum', sans-serif;
+  position: relative; }
 
 .header {
   width: 100%;
@@ -772,6 +773,9 @@ body {
   padding-right: 45px;
   padding-top: 30px; }
 
+.comment__content--entry h4 {
+  display: inline-block; }
+
 .discussion__comment {
   margin-bottom: 50px; }
 
@@ -822,7 +826,22 @@ body {
   vertical-align: middle; }
 
 .modal {
-  height: 200px;
-  width: 1000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9998;
+  background: rgba(0, 0, 0, 0.6); }
+
+.modal__content {
+  max-width: 850px;
+  width: 100%;
   margin: auto;
-  background: #fff; }
+  background: #fff;
+  position: relative;
+  z-index: 9999; }
+
+.text-gray-uppercase {
+  text-transform: uppercase;
+  color: #a7a9ac; }
