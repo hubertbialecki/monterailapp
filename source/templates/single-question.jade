@@ -1,5 +1,6 @@
 
 header.header.header__single__question(ng-controller="QuestionsController")
+  button.back__button(type="button" ui-sref="main")
   .header--inner
     .header__left
       h1.entry-title Questions
@@ -12,34 +13,42 @@ header.header.header__single__question(ng-controller="QuestionsController")
   .single__question
     .question(ng-repeat="question in questions")
       .question__top
-        .avatar-container
-          img.author-avatar-img(
-            alt="{{question.author.name}}" 
-            src="{{question.author.avatar}}"
-          )
-        .question-header
-          p 
-            a.author-name {{ question.author.name }}
-            |  IS ASKING
-          h2 
-            a {{question.title}}
+        .question-header--entry
+          .avatar-container
+            img.author-avatar-img(
+              alt="{{question.author.name}}" 
+              src="{{question.author.avatar}}"
+            )
+          .question-header
+              p 
+                a.author-name {{ question.author.name }}
+                |  IS ASKING
+              h2 
+                a {{question.title}}
+        .button__wrapper
+          button.button__follow(type="button" ng-click="question.follow = false" ng-show="question.follow") unfollow
+          button.button__follow(type="button" ng-click="question.follow = true" ng-hide="question.follow") follow
+        
         .clear
       .single__question__bottom
         .question__bottom--left
           .question__bottom--content
             .question__bottom--content-inner
               p {{ question.content }}
-              button.vote__button(type="button") Give new answer
         .question__bottom--right
-          .votes
+          .vote-button__container
             span {{ question.votes }} upvotes
-        .clear 
+            .arrows__wrapper
+              button.vote__button.vote__button--up(type="button")
+              button.vote__button.vote__button--down(type="button")
+        .clear
+        button.answer__button(type="button") GIVE new answer 
     
     .discussion__wrapper(ng-controller="DiscusionsController")
       p 2 peers already answered {{ question.author.name }}
       div.discussion_list(ng-repeat="discusion in discusions")
         .discussion__comment(ng-repeat="comment in discusion.comments") 
-          .comment__wrapper
+          .comment__wrapper(ng-class="comment.replies.length > 0 ? 'replied' : 'no__replies'")
             .comment__avatar 
               img.author-avatar-img(
                 alt="{{ comment.name }}" 
@@ -49,11 +58,20 @@ header.header.header__single__question(ng-controller="QuestionsController")
               .comment__content--left
                 .comment__content--entry
                   h4 {{ comment.author }}
+                  span Commented it 
+                  span.comment_date yesterday
                 p {{ comment.content }}
               .comment__content--right
-                {{ comment.votes }}
+                .vote-button__container
+                  span {{ comment.votes }} upvotes
+                  .arrows__wrapper
+                    button.vote__button.vote__button--up(type="button")
+                    button.vote__button.vote__button--down(type="button")
+              .clear
+            .clear 
+            button.answer__button(type="button" ng-hide="comment.replies.length > 0") Comment
           .discusion__replies(ng-show="comment.replies.length > 0")
-            .comment__wrapper(ng-repeat="replie in comment.replies")
+            .comment__wrapper(ng-repeat="replie in comment.replies" ng-class="replie.replies.length > 0 ? 'replied' : 'no__replies'")
               .comment__avatar 
                 img.author-avatar-img(
                   alt="{{ replie.name }}" 
@@ -63,8 +81,15 @@ header.header.header__single__question(ng-controller="QuestionsController")
                 .comment__content--left
                   .comment__content--entry
                     h4 {{ replie.author }}
+                    span Commented it 
+                    span.comment_date yesterday
                   p {{ replie.content }}
                 .comment__content--right
-                  {{ replie.votes }}
-            
+                  .vote-button__container
+                    span {{ comment.votes }} upvotes
+                    .arrows__wrapper
+                      button.vote__button.vote__button--up(type="button")
+                      button.vote__button.vote__button--down(type="button")
+              button.answer__button(type="button") Continue discussion
+              .clear 
         

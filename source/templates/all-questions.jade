@@ -43,10 +43,11 @@ header.header
     .question(ng-repeat="question in questions | filter: filterSearch | orderBy: filter")
       .question__top
         .avatar-container
-          img.author-avatar-img(
-            alt="{{question.author.name}}" 
-            src="{{question.author.avatar}}"
-          )
+          a(ng-click="showComplex()")
+            img.author-avatar-img(
+              alt="{{question.author.name}}" 
+              src="{{question.author.avatar}}"
+            )
         .question-header
           p 
             a.author-name {{ question.author.name }}

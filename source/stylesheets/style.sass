@@ -57,8 +57,8 @@ body
 
 .wrapper
   margin: 0 40px
+  padding-bottom: 80px
   background-color: $color_light_gray
-  padding-top: 8px
   box-shadow: 2px 0px 5px 0px rgba($color_gray_dark, 0.3)
   &--inner
     max-width: $wrapper_width
@@ -180,16 +180,45 @@ body
   input.radio-button:checked + label:after
     display: block
 
+.nav__search
+  padding: 10px 0
+
+  &--left
+    width: 75%
+    max-width: $wrapper_width
+    float: left
+
+  &--right
+    width: 25%
+    float: left
+    padding-left: 20px
+
+.nav__search--input
+  width: 100%
+  +resetStyle(#fbfbfb)
+  padding: 7px 18px
+  border: 1px solid $color_gray
+  +font(16px, $color_gray_dark)
+  letter-spacing: -0.5px
+  box-sizing: border-box
+
+.nav__search--button
+  +font(16px, $color_gray_dark)
+  +resetStyle($color_white)
+  width: 100%
+  text-transform: uppercase
+  padding: 6px
+  border: 1px solid $color_gray_dark
+
 .question
   padding-bottom: 40px
   border-bottom: 1px solid #e5e5e5
   box-shadow: 3px 0px 5px 0px rgba($color_gray_darker, 1)
+  background: #fff
 
 .question__top
   max-width: $qustion_max_width
   background-color: $color_light_blue
-  border: 1px solid $color_gray_darker
-  border-top: 0
   border-bottom: 0
   padding-top: 18px
   padding-bottom: 14px
@@ -257,19 +286,12 @@ body
     background: $color_light_blue
     margin: 0
     height: 185px
-    border: 1px solid $color_gray_darker
     border-top: 0
 
 .question__bottom--left
   width: 75%
   max-width: $qustion_max_width
   float: left
-
-.question__bottom--right
-  width: 25%
-  max-width: $qustion_max_width
-  float: left
-  padding-top: 35px
 
 .question__bottom--blue
   width: 90px
@@ -279,7 +301,6 @@ body
   overflow: hidden
   height: 192px
   padding-top: 15px
-  border-top: 1px solid $color_gray_darker
 
   .question__bottom__col
     margin-top: 15px
@@ -310,54 +331,11 @@ body
     background: $color_gray_font
 
 
-.single__question__bottom
-  width: 100%
-  background: $color_white
-
-.single__question
-  margin: auto
-  max-width: $wrapper_width
-
-  .question__top
-    max-width: 100%
-
-  .question
-    padding-bottom: 0
-    margin-bottom: 50px
-
-
-.nav__search
-  padding: 10px 0
-
-  &--left
-    width: 75%
-    max-width: $wrapper_width
-    float: left
-
-  &--right
-    width: 25%
-    float: left
-    padding-left: 20px
-
-.nav__search--input
-  width: 100%
-  +resetStyle(#fbfbfb)
-  padding: 7px 18px
-  border: 1px solid $color_gray
-  +font(16px, $color_gray_dark)
-  letter-spacing: -0.5px
-  box-sizing: border-box
-
-.nav__search--button
-  +font(16px, $color_gray_dark)
-  +resetStyle($color_white)
-  width: 100%
-  text-transform: uppercase
-  padding: 6px
-  border: 1px solid $color_gray_dark
-
 .question__bottom--right
   padding-left: 51px
+  width: 25%
+  float: left
+  padding-top: 35px
   p
     margin: 0
     font-style: italic
@@ -373,10 +351,40 @@ body
 
   &-inner
     background: #fff
-    padding: 20px 15px
+    padding: 11px 21px
+    padding-bottom: 20px
     position: relative
+    p
+      line-height: 19px
+      font-size: 14px
+
+
+
+.single__question__bottom
+  width: 100%
+  background: $color_white
+  position: relative
+
+.single__question
+  margin: auto
+  max-width: $wrapper_width
+
+  .question__top
+    max-width: 100%
+
+  .question
+    padding-bottom: 0
+    margin-bottom: 50px
+
+  .question__bottom--right
+    padding-top: 7px
+    text-align: right
+    padding-left: 0
+    padding-right: 30px
+
 
 .header__single__question
+  padding-bottom: 30px
   .header__right
     padding-top: 0
 
@@ -385,7 +393,7 @@ body
   padding-left: 90px
   text-align: center
 
-.vote__button
+.answer__button
   +resetStyle($color_white)
   padding: 10px
   border: 1px solid $color_black
@@ -393,9 +401,109 @@ body
   bottom: -20px
   left: 50%
   transform: translateX(-50%)
+  width: 180px
+  text-align: center
 
+.question-header--entry
+  width: 75%
+  float: left
+
+.button__follow
+  +resetStyle
+  +font(16px, $color_blue)
 
 //comments
 
 .discusion__replies
-  padding-left: 30px
+  padding-left: 90px
+
+.button__wrapper
+  float: right
+  width: 25%
+  text-align: right
+  padding-right: 68px
+  padding-top: 18px
+
+.comment__avatar
+  width: 90px
+  float: left
+  text-align: center
+  padding-top: 15px
+
+.comment__content
+  width: calc(100% - 90px)
+  float: left
+  padding-left: 19px
+  border-bottom: 1px solid $color_gray
+  border-left: 1px solid $color_gray
+
+
+.comment__content
+  &--left
+    width: 75%
+    float: left
+  &--right
+    width: 25%
+    float: left
+    text-align: right
+    padding-right: 45px
+    padding-top: 30px
+
+.discussion__comment
+  margin-bottom: 50px
+
+.comment__wrapper
+  position: relative
+  background: $color_white
+  box-shadow: 0px -2px 8px #f7f7f7
+  z-index: 10
+
+  &.no__replies
+    .comment__content
+      padding-bottom: 40px
+
+  .answer__button
+    right: 50%
+    left: auto
+    transform: translateX(50%)
+    z-index: 10
+
+.discusion__replies
+  .comment__wrapper
+    position: relative
+    z-index: 9
+
+    .answer__button
+      right: 50%
+      left: auto
+      transform: translateX(calc(50% - 45px))
+
+
+.vote__button
+  +resetStyle
+  width: 0
+  height: 0
+  display: block
+  margin: 10px
+  padding: 0
+  &--up
+    border-left: 5px solid transparent
+    border-right: 5px solid transparent
+    border-bottom: 11px solid $color_blue
+  &--down
+    border-left: 5px solid transparent
+    border-right: 5px solid transparent
+    border-top: 11px solid $color_blue
+
+.arrows__wrapper
+  display: inline-block
+  vertical-align: middle
+
+
+
+//modal
+.modal
+  height: 200px
+  width: 1000px
+  margin: auto
+  background: $color_white
