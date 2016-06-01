@@ -1,10 +1,37 @@
 $color_body: #ffe1ad
 $color_white: #fff
+$color_light_gray: #fbfbfb
 $color_light_blue: #dff3fd
 $color_gray: #eeeeee
 $color_heading: #2d2c2e
 $color_blue: #0266b3
 $color_gray_darker: #dfdfdf
+$color_gray_dark: #a9aaad
 $color_gray_font: #a7a9ac
+$color_gradient: #f0f0f0
+$color_red: #dc173f
+$color_black: #000
 $wrapper_width: 800px
+$modal_width: 850px
+$modal_width_inner: 600px
 $qustion_max_width: 595px
+$modal_users_max_width: 310px
+$desktop: 960px
+$tablet: 768px
+$palm: 640px
+$phone: 540px
+$mobile-phone: 480px
+$cell-phone: 320px
+=resetStyle( $background:none )
+  border: 0
+  outline: 0
+  -webkit-appearance:none
+  background: $background
+  cursor: pointer
+
+=font($font-size, $color: $color_black)
+  font-size: $font-size
+  color: $color
+
+=linearGradient()
+  background: repeating-linear-gradient(45deg, $color_white, $color_gradient 2px, $color_white 4px, $color_gradient 2px)

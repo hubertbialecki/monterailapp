@@ -46,7 +46,7 @@ gulp.task('jade', function() {
 });
 
 gulp.task('sass', function(){
-  return gulp.src(paths.src + 'stylesheets/**/*.{sass,scss}')
+  return gulp.src(paths.src + 'stylesheets/style.{sass,scss}')
     .pipe(plugin.sass({
       includePaths: require('node-normalize-scss').includePaths
     }).on('error', sass.logError))

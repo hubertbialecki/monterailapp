@@ -1,6 +1,6 @@
 .modal.fade(ng-controller="UserController")
-  .modal-dialog.modal-lg
-    .modal__content(ng-repeat="user in users")
+  .modal-dialog.modal-lg(ng-repeat="user in users")
+    .modal__content
       .modal__header
         button.close(
           type="button" 
@@ -31,8 +31,8 @@
             h2 How it all started
             p.text-gray-uppercase that's where we have been these 5 months ago
           .user__achivements--box(ng-repeat="achivement in user.achivements | limitTo: 4" ng-class="achivement.name")
-            span.archivement-number {{ achivement.count }} 
-            span.archivement-name {{ achivement.name }}   
+            span.achivement-number {{ achivement.count }} 
+            span.achivement-name {{ achivement.name }}   
           .clear
         .related_users
           p.text-gray-uppercase who joined the platform the same perdiod
@@ -46,21 +46,27 @@
                   )
                 h4 {{ relatedUser.name }}  
             .clear
-        .hottest__discussion
-          p.text-gray-uppercase the hottest discusion these days
-          .hottes__discussion--bg(ng-repeat="discussion in user.hottes_discussion")
-            img.author-avatar-img(
-              alt="{{ discussion.name }}" 
-              src="{{ discussion.avatar }}"
-            )
-            p {{ discussion.author }} 
-            p.text-gray-uppercase Found the guardian article
-            h4 {{ discussion.title }}
-            .discussin__stats
-              p {{ discussion.peers }} peers involved
-              p {{ discussion.discusions }} related discusions
-              p {{ discussion.conversations }} conversations
-              p {{ discussion.upvotes }} upvotes
-                
               
-        
+    .hottest__discussion
+      p.text-gray-uppercase the hottest discusion these days
+      .hottes__discussion--bg(ng-repeat="discussion in user.hottes_discussion")
+        img.author-avatar-img(
+          alt="{{ discussion.name }}" 
+          src="{{ discussion.avatar }}"
+        )
+        .hottes__discussion--bg--inner
+          h4 {{ discussion.author }} 
+          p.text-gray-uppercase Found the guardian article
+          h5 {{ discussion.title }}
+          .discussin__stats
+            p {{ discussion.peers }} 
+              span peers involved
+            p {{ discussion.discusions }} 
+              span related discusions
+            p {{ discussion.conversations }} 
+              span conversations
+            p {{ discussion.upvotes }} 
+              span upvotes
+              
+            
+      

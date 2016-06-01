@@ -21,8 +21,51 @@ app.factory('getData', function($http, $q) {
 
 app.controller('QuestionsController', function($scope, getData){
   getData.getQuestions().then( function(response){
-    $scope.questions = response.data.slice(0,3);
+    $scope.questions = response.data;
   });
+  // $scope.loadPostsInit = function($scope){
+  //   var limit = 3;
+  //   offset = 0;
+  //   console.log($scope.allQuestions);
+  //   $scope.questions = $scope.allQuestions.slice(offset,limit);
+  // }
+  // $scope.loadPosts = function($scope){
+  //   var limit = 3;
+  //   offset = 3;
+  //   $scope.questions= $scope.questions.slice(offset,limit);
+  // }
+});
+
+app.controller('LoadController', function($scope, getData){
+  getData.getQuestions().then( function(response){
+    $scope.allQuestions = response.data;
+    console.log($scope.allQuestions);
+  })
+  this.allQuestionsVar = $scope.allQuestions;
+  this.qustionsToLoad = [];
+  this.limit = 3;
+  this.offset = 0;
+  $scope.loadPostsInit = function($scope){
+    console.log('asd');
+    console.log(this.allQuestionsVar );
+    this.qustionsToLoad = this.allQuestionsVar.slice(this.offset,this.limit);
+    return this.qustionsToLoad;
+  }
+  $scope.loadPosts = function($scope){
+    console.log('asd');
+    this.qustionsToLoad = this.allQuestionsVar.slice(this.offset,this.limit);
+    return this.qustionsToLoad;
+  }
+});
+
+app.controller('SortingControler', function($scope){
+  $scope.setSorting = function(sorter){
+    $scope.sorting = sorter;
+    console.log('sdf');
+  };
+  $scope.getSorting = function() {
+    return $scope.sorting;
+  };
 });
 
 app.controller('DiscusionsController', function($scope, getData){
@@ -37,19 +80,14 @@ app.controller('SingleQuestionsController', function($scope,  getData){
   });
 });
 
-app.controller('SortingController', function($scope){
-  $scope.filter = 'recent';
-  this.selectFilter = function(selectedFilter){
-    $scope.filter = selectedFilter;
-  }
-});
-
 
 app.controller('UserController', function($scope, getData){
   getData.getUser().then( function(response){
     $scope.users = response.data;
   });
 });
+
+
 
 
 app.config(function($stateProvider, $urlRouterProvider) {

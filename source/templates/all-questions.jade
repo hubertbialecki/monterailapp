@@ -1,4 +1,4 @@
-header.header
+header.header(ng-controller="QuestionsController")
   .header--inner
     .header__left
       h1.entry-title Questions
@@ -25,11 +25,11 @@ header.header
             ) 
             label.radio-button--label(for="filter2")
               | All questions
-      .qustions__filter.qustions__filter--sorting(ng-controller="SortingController as sortingContr")
+      .qustions__filter.qustions__filter--sorting(ng-controller="SortingControler as sortingControler")
         span Sort by:
-        button.active.text-button(type="button" ng-click="sortingContr.selectFilter('recent')") recent
+        button.active.text-button(type="button" ng-click="sortingControler.setSorting('recent')") recent
         span or
-        button.text-button.text-button-right(type="button" ng-click="sortingContr.selectFilter('hot')") hot  
+        button.text-button.text-button-right(type="button" ng-click="sortingControler.setSorting('hot')") hot  
     .clear
     .nav__search
       .nav__search--left
@@ -40,7 +40,7 @@ header.header
         
 .wrapper(ng-controller="QuestionsController")
   .wrapper--inner
-    .question(ng-repeat="question in questions | filter: filterSearch | orderBy: filter")
+    .question(ng-repeat="question in questions | filter: filterSearch ")
       .question__top
         .avatar-container
           a(ui-sref="user")
@@ -54,13 +54,14 @@ header.header
             |  IS ASKING
           h2 
             a(ui-sref="single") {{question.title}}
+        .clear
       .question__bottom
         .question__bottom--left
           .qustion__bottom--blue
             .question__bottom__col.question__bottom__col--first 
               p.activities_role asked
           .question__bottom--flex
-            .question__bottom__col.question__bottom__col--more(ng-show="question.user_involved.length > 5")
+            .question__bottom__col.question__bottom__col--more( ng-show="question.user_involved.length > 5")
               span {{ question.user_involved.length - 5 }}
               p.activities_role more activities
             .question__bottom__col(ng-repeat="activities in question.user_involved")
@@ -80,4 +81,5 @@ header.header
           p 
             span {{question.conversations}} 
             | conversations
-    button.load-questions(type="button") load more questions
+    .load-questions__container
+      button.load-questions(type="button" ng-click="loadController.loadPosts()") load more questions

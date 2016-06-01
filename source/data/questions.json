@@ -6,7 +6,7 @@
          "name":"Eva",
          "avatar":"assets/images/avatar1.png"
       },
-      "hot": true,
+      "status": "hot",
       "discusions":2,
       "peers":6,
       "conversations":3,
@@ -60,6 +60,7 @@
          "name":"Andrew",
          "avatar":"assets/images/avatar4.png"
       },
+      "status": "hot",
       "discusions":2,
       "peers":6,
       "conversations":3,
@@ -94,6 +95,7 @@
          "name":"Andrew",
          "avatar":"assets/images/avatar4.png"
       },
+      "status": "recent",
       "discusions":2,
       "peers":6,
       "conversations":3,
@@ -128,6 +130,7 @@
          "name":"Andrew",
          "avatar":"assets/images/avatar4.png"
       },
+      "status": "recent",
       "discusions":2,
       "peers":6,
       "conversations":3,
@@ -162,6 +165,7 @@
          "name":"Andrew",
          "avatar":"assets/images/avatar4.png"
       },
+      "status": "recent",
       "discusions":2,
       "peers":6,
       "conversations":3,
@@ -196,6 +200,7 @@
          "name":"Andrew",
          "avatar":"assets/images/avatar4.png"
       },
+      "status": "hot",
       "discusions":2,
       "peers":6,
       "conversations":3,
@@ -230,6 +235,7 @@
          "name":"Andrew",
          "avatar":"assets/images/avatar4.png"
       },
+      "status": "recent",
       "discusions":2,
       "peers":6,
       "conversations":3,
@@ -264,6 +270,7 @@
          "name":"Andrew",
          "avatar":"assets/images/avatar4.png"
       },
+      "status": "recent",
       "discusions":2,
       "peers":6,
       "conversations":3,
@@ -298,6 +305,7 @@
          "name":"Andrew",
          "avatar":"assets/images/avatar4.png"
       },
+      "status": "recent",
       "discusions":2,
       "peers":6,
       "conversations":3,

@@ -1,0 +1,88 @@
+$desktop: 960px
+$tablet: 768px
+$palm: 640px
+$phone: 540px
+$mobile-phone: 480px
+$cell-phone: 320px
+
+@media screen and (max-width : $desktop)
+  .header
+    padding: 20px 40px
+    padding-top: 50px
+
+  .question__bottom--right
+    padding-left: 20px
+    padding-right: 10px
+
+  .question__top
+    max-width: 100%
+
+  .wrapper
+    margin: 0
+
+
+@media screen and (max-width : 768px)
+  .header
+    &__left
+      width: 100%
+      float: none
+
+    &__right
+      width: 100%
+      float: none
+      text-align: left
+      padding-bottom: 10px
+
+  .qustions__filter
+    margin: 10px 0
+
+  .question__bottom
+    &--left
+      width: 70%
+    &--right
+      width: 30%
+  .question__bottom__col:not(.question__bottom__col--more)
+    .activities_role:after
+      background: $color_black
+
+@media screen and (max-width : 640px)
+  .nav__search--left
+    width: 60%
+  .nav__search--right
+    width: 40%
+
+  .question__bottom
+    &--left
+      width: 65%
+    &--right
+      width: 35%
+
+@media screen and (max-width : 480px)
+  .qustion__bottom--blue
+    display: none
+
+  .question__bottom
+    &--left
+      width: 60%
+    &--right
+      width: 40%
+
+  .question__bottom__col--more
+    background: $color_gray
+
+@media screen and (max-width : 320px)
+  .nav__search
+    &--left
+      width: 100%
+      float: none
+    &--right
+      width: 100%
+      float: none
+      padding-left: 0
+      padding-top: 10px
+
+  .question__bottom
+    &--left
+      width: 50%
+    &--right
+      width: 50%
