@@ -8,10 +8,13 @@ $color_blue: #0266b3
 $color_gray_darker: #dfdfdf
 $color_gray_dark: #a9aaad
 $color_gray_font: #a7a9ac
+$color_gradient: #f0f0f0
 $color_black: #000
 $wrapper_width: 800px
 $modal_width: 850px
+$modal_width_inner: 600px
 $qustion_max_width: 595px
+$modal_users_max_width: 320px
 =resetStyle( $background:none )
   border: 0
   outline: 0
@@ -25,6 +28,9 @@ $qustion_max_width: 595px
 
 @import "normalize"
 @import url(https://fonts.googleapis.com/css?family=Cuprum:400,400italic,700,700italic)
+
+=linearGradient()
+  background: repeating-linear-gradient(45deg, $color_white, $color_gradient 2px, $color_white 4px, $color_gradient 2px)
 
 .clear
   clear: both
@@ -516,14 +522,119 @@ body
   background: rgba($color_black, 0.6)
 //modal
 .modal__content
+  max-width: $modal_width_inner
+  margin: auto
+
+.modal-dialog
   max-width: $modal_width
   width: 100%
   margin: auto
   background: $color_white
   position: relative
   z-index: 9999
+  margin-top: 25px
+  padding-top: 47px
 
+.modal__header
+  .close
+    position: absolute
+    top: 0
+    right: 0
+    +resetStyle()
+    +font(24px,$color_gray_font)
 
 .text-gray-uppercase
   text-transform: uppercase
   color: $color_gray_font
+
+.user__thumb
+  text-align: center
+
+.user__name
+  text-align: center
+  +font(20px, $color_blue)
+
+.user__accinfo
+  padding-bottom: 25px
+  border-bottom: 1px solid $color_gray_font
+  &--col
+    display: inline-block
+    width: 33.33%
+
+.user__accinfo--col:last-child
+  text-align: right
+
+.user__achivements--box
+  width: 25%
+  float: left
+  text-align: center
+  position: relative
+  height: 92px
+  padding-top: 30px
+  z-index: 10
+
+  span
+    display: block
+    position: relative
+    z-index: 90
+
+  .achivement-number
+    font-size: 20px
+
+  .archivement-name
+    font-size: 16px
+    font-style: italic
+
+
+  &:after
+    content: ''
+    height: 92px
+    background: $color_light_blue
+    position: absolute
+    top: 0
+    left: 50%
+    margin-left: -46px
+    z-index: 1
+    width: 92px
+
+.user__achivements--box.peers
+  &:after
+    transform: rotate(40deg)
+
+.user__achivements--box.discussions
+  &:after
+    transform: rotate(15deg)
+
+.user__achivements--box.findings
+  &:after
+    transform: rotate(35deg)
+
+.user__achivements--box.questions
+  &:after
+    transform: rotate(-10deg)
+
+
+.user__achivements__header
+  text-align: center
+  h2
+    +font(30px,$color_black)
+    font-style: italic
+
+.user__main-content
+  padding: 0 70px
+  text-align: center
+
+.related_users__profiles
+  max-width: $modal_users_max_width
+  margin: auto
+
+  &--box
+    width: 33.33%
+    padding: 6px
+    float: left
+
+  &--box-inner
+    text-align: center
+  &--avatar
+    +linearGradient()
+    padding: 20px

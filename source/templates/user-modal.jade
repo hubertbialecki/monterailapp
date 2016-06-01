@@ -15,19 +15,22 @@
         )
       h2.user__name {{user.name}}
       .user__accinfo
-        .user__accinfo--col
+        .user__accinfo--col.user__accinfo--col-1
           span.user__accinfo--label.text-gray-uppercase Member for 
           span.user__accinfo--number {{ user.memberfor }}
-        .user__accinfo--col
+        .user__accinfo--col.user__accinfo--col-2
           span.user__accinfo--label.text-gray-uppercase Last seen 
           span.user__accinfo--number {{ user.lastseen }}
-        .user__accinfo--col
+        .user__accinfo--col.user__accinfo--col-3
           span.user__accinfo--label.text-gray-uppercase Activity Level
           span.user__accinfo--number {{ user.acrivitylevel }}
-        .clear
+        
       .user__main-content
         .user__achivements
-          .user__achivements--box(ng-repeat="achivement in user.achivements" ng-class="achivement.name")
+          .user__achivements__header
+            h2 How it all started
+            p.text-gray-uppercase that's where we have been these 5 months ago
+          .user__achivements--box(ng-repeat="achivement in user.achivements | limitTo: 4" ng-class="achivement.name")
             span.archivement-number {{ achivement.count }} 
             span.archivement-name {{ achivement.name }}   
           .clear
@@ -35,11 +38,14 @@
           p.text-gray-uppercase who joined the platform the same perdiod
           .related_users__profiles
             .related_users__profiles--box(ng-repeat="relatedUser in user.related_users")
-              img.author-avatar-img(
-                alt="{{ relatedUser.name }}" 
-                src="{{ relatedUser.avatar }}"
-              )
-              h4 {{ relatedUser.name }}  
+              .related_users__profiles--box-inner
+                .related_users__profiles--avatar
+                  img.author-avatar-img(
+                    alt="{{ relatedUser.name }}" 
+                    src="{{ relatedUser.avatar }}"
+                  )
+                h4 {{ relatedUser.name }}  
+            .clear
         .hottest__discussion
           p.text-gray-uppercase the hottest discusion these days
           .hottes__discussion--bg(ng-repeat="discussion in user.hottes_discussion")
