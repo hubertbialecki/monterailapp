@@ -1,30 +1,30 @@
 **Task 1: Implement views**
 
-Your first task is to implements 3 base views of this project: list of questions (all_questions_base.png), single question view (single_question_base.png) and user profile (profile_base.png). Bottom line is just static view, with HTML markup and CSS stylesheets, however you can connect them with links for easy switching from view to view.
+I've implemented views. I've used font Cuprum. 
 
 **Task 2: Make them responsive**
 
-User profile and single questions view have additional versions for tablet and mobile. For all questions view use additional material which pictures way the single story box is changing with responsiveness. How should other interface elements act for different viewports? Came up with your own solution for this part.
+Responsive is implemented but i didn't have enought time to test it well. I missed follow button in single question view.
 
 **Task 3: Connect modal to users**
 
-As you noticed so far, user profile is displayed as modal. Write necessary logic for displaying user profile modal while visiting both question views and show this modal whenever user avatar or name is clicked.
+I've implemented modal to users, but I've added only one user in user.json. It should works same as questions loading.
 
 **Task 4: Use templates**
 
-If so far you've coded all the content for questions, comments and profile data within HTML now is time to leverage that to templates. Make the data reside in dedicated data structures and collections. Every place that can potentially hold varying content should use templates and fill it with data from collections. If you feel competent enough try mocking API requests but all the data still can be fixed (no backend is needed for this project, but if you know how to talk to JSON API, here is your chance to show how it's done from browser side).
+I've added three templates - for all questions, single question and user's modal. I emulated API by json's files (qustions.json, users.json, discussion.json). I added only one discussion, so there is the same discussion under every single question.
 
 **Task 5: Add pagination and sorting**
 
-All questions view has interface dedicated for sorting questions - use it and implement sorting items displayed here. At the bottom of list is 'load more questions' command. Add functionality which shows additional number of questions within this view when clicked (all the data can be fixed even if it means repeating items).
+I've added loading posts by 3 per click, but it is unsorted in json and it is sorting after loaded, but I was run out of time to correct it. Sorting works on number in record, which emulating ordering (it should be ordered by date with recent filter on, and ordered by peers involved on clicking hot)
 
 **Task 6: Add search**
 
-All questions view has search form. Use it for implementing simple search system and let it show only items related to provided query (when search is run with empty query just show all the items, like by default visit to this view).
+I've added search form.
 
 **Task 7: Implement voting**
 
-Single question view contains comments and answers with voting component. Implement voting component, so viewer can rate entries as helpful or not.
+I've implemented voting only on single qustion. By default qustions isn't voted, user can vote up and down, and change voting if voted up or down.
 
 **Task 8: Add routing**
 
