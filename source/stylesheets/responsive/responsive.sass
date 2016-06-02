@@ -28,6 +28,10 @@ $cell-phone: 320px
   .header__single__question
     padding-left: 120px
 
+  .modal__content,
+  .hottes__discussion--bg
+    padding-left: 40px
+    padding-right: 40px
 
 @media screen and (max-width : 768px)
   .header:not(.header__single__question)
@@ -129,6 +133,23 @@ $cell-phone: 320px
   .discusion__replies .comment__wrapper .answer__button
     transform: translateX(50%)
 
+  .user__accinfo
+    &--col
+      width: 100%
+      float: none
+      text-align: center
+      padding-bottom: 10px
+
+      &:last-child
+        text-align: center
+
+  .user__achivements
+    &--box
+      width: 50%
+
+  .user__main-content
+    padding: 0 30px
+
 @media screen and (max-width : 480px)
   .qustion__bottom--blue
     display: none
@@ -139,8 +160,33 @@ $cell-phone: 320px
     &--right
       width: 40%
 
+  .user__accinfo--col:last-child img
+    margin: 0 5px
+
   .question__bottom__col--more
     background: $color_gray
+
+  .user__accinfo
+    &--col
+      span
+        display: block
+
+  .modal__content,
+  .hottes__discussion--bg
+    padding-left: 20px
+    padding-right: 20px
+
+  .discussin__stats
+    padding: 20px
+    padding-right: 0
+
+    p
+      width: 50%
+      text-align: left
+      margin: 5px 0
+
+  .user__main-content
+    padding: 0
 
 @media screen and (max-width : 320px)
   .nav__search

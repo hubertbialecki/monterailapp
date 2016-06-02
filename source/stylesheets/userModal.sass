@@ -47,6 +47,10 @@
 .user__accinfo--col:last-child
   text-align: right
 
+  img
+    vertical-align: middle
+    margin-left: 9px
+
 .user__achivements--box
   width: 25%
   float: left
@@ -101,11 +105,15 @@
 
 
 .user__achivements__header
-  text-align: center
+  text-align: justify
+  display: flex
+  justify-content: space-between
+  padding-top: 15px
   h2
     +font(45px,$color_black)
     font-style: italic
-    margin-top: 14px
+    margin-top: 0px
+    display: inline-block
 
 .user__main-content
   padding: 0 70px
@@ -183,3 +191,52 @@
       font-weight: 400
       font-size: 16px
       margin-left: 10px
+
+
+
+.btn__slider
+  +resetStyle($color_gray)
+  width: 30px
+  height: 30px
+  border-radius: 50%
+  position: relative
+  display: inline-block
+  margin-top: 8px
+
+  &:before
+    content: ""
+    position: absolute
+    width: 2px
+    height: 10px
+    background-color: $color_white
+    top: 7px
+    left: 14px
+
+  &:after
+    content: ""
+    position: absolute
+    width: 2px
+    height: 10px
+    background-color: $color_white
+    bottom: 7px
+    left: 14px
+
+  &--next
+    background-color: $color_blue
+
+    &:before
+      transform: rotate(128deg)
+
+    &:after
+      transform: rotate(-128deg)
+
+  &--prev
+
+    &:before
+      transform: rotate(53deg)
+
+    &:after
+      transform: rotate(-53deg)
+
+    &:hover
+      background-color: $color_blue

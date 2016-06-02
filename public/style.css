@@ -951,6 +951,9 @@ body {
 
 .user__accinfo--col:last-child {
   text-align: right; }
+  .user__accinfo--col:last-child img {
+    vertical-align: middle;
+    margin-left: 9px; }
 
 .user__achivements--box {
   width: 25%;
@@ -1000,12 +1003,20 @@ body {
           transform: rotate(11deg); }
 
 .user__achivements__header {
-  text-align: center; }
+  text-align: justify;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 15px; }
   .user__achivements__header h2 {
     font-size: 45px;
     color: #000;
     font-style: italic;
-    margin-top: 14px; }
+    margin-top: 0px;
+    display: inline-block; }
 
 .user__main-content {
   padding: 0 70px;
@@ -1082,6 +1093,50 @@ body {
       font-size: 16px;
       margin-left: 10px; }
 
+.btn__slider {
+  border: 0;
+  outline: 0;
+  background: #eeeeee;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  margin-top: 8px; }
+  .btn__slider:before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background-color: #fff;
+    top: 7px;
+    left: 14px; }
+  .btn__slider:after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background-color: #fff;
+    bottom: 7px;
+    left: 14px; }
+  .btn__slider--next {
+    background-color: #0266b3; }
+    .btn__slider--next:before {
+      -webkit-transform: rotate(128deg);
+              transform: rotate(128deg); }
+    .btn__slider--next:after {
+      -webkit-transform: rotate(-128deg);
+              transform: rotate(-128deg); }
+  .btn__slider--prev:before {
+    -webkit-transform: rotate(53deg);
+            transform: rotate(53deg); }
+  .btn__slider--prev:after {
+    -webkit-transform: rotate(-53deg);
+            transform: rotate(-53deg); }
+  .btn__slider--prev:hover {
+    background-color: #0266b3; }
+
 @media screen and (max-width: 1024px) {
   .header__single__question {
     padding-left: 60px; } }
@@ -1098,7 +1153,11 @@ body {
   .wrapper {
     margin: 0; }
   .header__single__question {
-    padding-left: 120px; } }
+    padding-left: 120px; }
+  .modal__content,
+  .hottes__discussion--bg {
+    padding-left: 40px;
+    padding-right: 40px; } }
 
 @media screen and (max-width: 768px) {
   .header:not(.header__single__question)__left {
@@ -1174,7 +1233,18 @@ body {
     padding-left: 0; }
   .discusion__replies .comment__wrapper .answer__button {
     -webkit-transform: translateX(50%);
-            transform: translateX(50%); } }
+            transform: translateX(50%); }
+  .user__accinfo--col {
+    width: 100%;
+    float: none;
+    text-align: center;
+    padding-bottom: 10px; }
+    .user__accinfo--col:last-child {
+      text-align: center; }
+  .user__achivements--box {
+    width: 50%; }
+  .user__main-content {
+    padding: 0 30px; } }
 
 @media screen and (max-width: 480px) {
   .qustion__bottom--blue {
@@ -1183,8 +1253,25 @@ body {
     width: 60%; }
   .question__bottom--right {
     width: 40%; }
+  .user__accinfo--col:last-child img {
+    margin: 0 5px; }
   .question__bottom__col--more {
-    background: #eeeeee; } }
+    background: #eeeeee; }
+  .user__accinfo--col span {
+    display: block; }
+  .modal__content,
+  .hottes__discussion--bg {
+    padding-left: 20px;
+    padding-right: 20px; }
+  .discussin__stats {
+    padding: 20px;
+    padding-right: 0; }
+    .discussin__stats p {
+      width: 50%;
+      text-align: left;
+      margin: 5px 0; }
+  .user__main-content {
+    padding: 0; } }
 
 @media screen and (max-width: 320px) {
   .nav__search--left {

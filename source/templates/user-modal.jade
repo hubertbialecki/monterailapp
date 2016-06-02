@@ -23,13 +23,26 @@
           span.user__accinfo--number {{ user.lastseen }}
         .user__accinfo--col.user__accinfo--col-3
           span.user__accinfo--label.text-gray-uppercase Activity Level
-          span.user__accinfo--number {{ user.acrivitylevel }}
-        
+          img.author-award-img(
+            alt="award" 
+            src="assets/images/award-color.png"
+          )
+          img.author-award-img(
+            alt="award" 
+            src="assets/images/award-color.png"
+          )
+          img.author-award-img(
+            alt="award" 
+            src="assets/images/award-gray.png"
+          )
+      .user__achivements__header
+        button.btn__slider.btn__slider--prev(type="button")
+        h2 How it all started
+        button.btn__slider.btn__slider--next(type="button")
+      .aling_center
+        p.text-gray-uppercase that's where we have been these 5 months ago
       .user__main-content
         .user__achivements
-          .user__achivements__header
-            h2 How it all started
-            p.text-gray-uppercase that's where we have been these 5 months ago
           .user__achivements--box(ng-repeat="achivement in user.achivements | limitTo: 4" ng-class="achivement.name")
             span.achivement-number {{ achivement.count }} 
             span.achivement-name {{ achivement.name }}   
