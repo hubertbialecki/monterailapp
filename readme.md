@@ -24,8 +24,8 @@ I've added search form.
 
 **Task 7: Implement voting**
 
-I've implemented voting only on single qustion. By default qustions isn't voted, user can vote up and down, and change voting if voted up or down.
+I've implemented voting only on single qustion. By default qustions isn't voted, user can vote up and down, and change voting.
 
 **Task 8: Add routing**
 
-If so far views were connected just by standard hyperlinks, now it's time to go SPA way - combine all views in single app and make them switch without reloading browser.
+I've added routing, single qustions is recived by id. User's as I've mentioned before are fixed and only one user is in users.json.
