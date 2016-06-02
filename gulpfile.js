@@ -55,26 +55,21 @@ gulp.task('sass', function(){
 });
 
 gulp.task('javascript', function(){
-  return gulp.src(paths.src + '/js/**/*.js')
-    .pipe(gulp.dest(paths.public + '/js/'))
+  return gulp.src(paths.src + 'js/**/*.js')
+    .pipe(gulp.dest(paths.public + 'js/'))
 });
 
 gulp.task('json', function(){
-  return gulp.src(paths.src + '/data/**/*.json')
-    .pipe(gulp.dest(paths.public + '/data/'))
+  return gulp.src(paths.src + 'data/**/*.json')
+    .pipe(gulp.dest(paths.public + 'data/'))
 });
 
 gulp.task('vendor', function(){
-  return gulp.src(paths.src + '/vendor/**/*.*')
-    .pipe(gulp.dest(paths.public + '/vendor/'))
+  return gulp.src(paths.src + 'vendor/**/*.*')
+    .pipe(gulp.dest(paths.public + 'vendor/'))
 });
 
 gulp.task('images', function(){
-  return gulp.src(paths.src + '/assets/images/**/*.{png,jpg,jpeg}')
-    .pipe(gulp.dest(paths.public + '/assets/images/'))
-});
-
-gulp.task('fonts', function(){
-  return gulp.src(paths.src + '**.{eot,ttf,woff}')
-    .pipe(gulp.dest(paths.public + 'fonts/'))
+  return gulp.src(paths.src + 'assets/images/**/*.{png,jpg,jpeg}')
+    .pipe(gulp.dest(paths.public + 'assets/images/'))
 });

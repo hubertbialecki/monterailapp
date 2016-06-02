@@ -61,7 +61,6 @@ app.controller('SingleQuestionsController', function($scope, getData, $statePara
   getData.getQuestions().then( function(response){
     $scope.questions = response.data;
     $scope.singleQuestion = $scope.getQuestionById($stateParams.questionId);
-    console.log($scope.singleQuestion);
   });
 
   $scope.getQuestionById = function(id) {
