@@ -1,4 +1,4 @@
-.modal.fade(ng-controller="UserController")
+ng-.modal.fade(ng-controller="UserController")
   .modal-dialog.modal-lg(ng-repeat="user in users")
     .modal__content
       .modal__header
@@ -11,7 +11,7 @@
       .user__thumb
         img.author-avatar-img(
           alt="{{ user.name }}" 
-          src="{{ user.avatar }}"
+          ng-src="{{ user.avatar }}"
         )
       h2.user__name {{user.name}}
       .user__accinfo
@@ -55,7 +55,7 @@
                 .related_users__profiles--avatar
                   img.author-avatar-img(
                     alt="{{ relatedUser.name }}" 
-                    src="{{ relatedUser.avatar }}"
+                    ng-src="{{ relatedUser.avatar }}"
                   )
                 h4 {{ relatedUser.name }}  
             .clear
@@ -65,7 +65,7 @@
       .hottes__discussion--bg(ng-repeat="discussion in user.hottes_discussion")
         img.author-avatar-img(
           alt="{{ discussion.name }}" 
-          src="{{ discussion.avatar }}"
+          ng-src="{{ discussion.avatar }}"
         )
         .hottes__discussion--bg--inner
           h4 {{ discussion.author }} 

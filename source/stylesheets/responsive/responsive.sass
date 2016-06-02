@@ -1,11 +1,3 @@
-$desktop: 1024px
-$tablet_large: 960px
-$tablet: 768px
-$palm: 640px
-$phone: 540px
-$mobile-phone: 480px
-$cell-phone: 320px
-
 @media screen and (max-width : $desktop)
   .header__single__question
     padding-left: 60px
@@ -27,11 +19,6 @@ $cell-phone: 320px
 
   .header__single__question
     padding-left: 120px
-
-  .modal__content,
-  .hottes__discussion--bg
-    padding-left: 40px
-    padding-right: 40px
 
 @media screen and (max-width : $tablet)
   .header.header__allquestions
@@ -62,7 +49,7 @@ $cell-phone: 320px
     padding-left: 90px
 
   .question__bottom
-  
+
     &--left
       width: 70%
 
@@ -83,6 +70,11 @@ $cell-phone: 320px
   .nav__search--right
     width: 40%
 
+  .modal__content,
+  .hottes__discussion--bg
+    padding-left: 40px
+    padding-right: 40px
+    
   .question__bottom
     &--left
       width: 65%
