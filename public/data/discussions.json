@@ -1,0 +1,31 @@
+[
+  {
+    "id":1,
+    "comments":[
+      {
+        "author": "Patricia",
+        "avatar":"assets/images/avatar4.png",
+        "date": "2016-05-26",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed libero lectus, mattis nec est quis",
+        "votes": "8",
+        "replies":[
+          {
+            "author": "David",
+            "avatar":"assets/images/avatar4.png",
+            "date": "2016-05-26",
+            "content": "Replies Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed libero lectus, mattis nec est quis",
+            "votes": "2"
+          }
+        ]
+      },
+      {
+        "author": "Patricia",
+        "avatar":"assets/images/avatar4.png",
+        "date": "2016-05-26",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed libero lectus, mattis nec est quis",
+        "votes": "8",
+        "replies":[]
+      }
+    ]
+  }
+]

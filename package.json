@@ -1,0 +1,30 @@
+{
+  "name": "MonterailApp",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular-animate": "^1.5.6",
+    "angular-ui-router": "^0.3.0",
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-coffee": "^2.3.1",
+    "gulp-connect": "^2.2.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-sass": "^2.3.1",
+    "gulp-watch": "^4.3.5",
+    "node-normalize-scss": "^1.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hubertbialecki/monterailapp.git"
+  },
+  "keywords": [
+    "gulp",
+    "sass",
+    "jade"
+  ],
+  "author": "Hubert Białęcki",
+  "license": "GPL-3.0"
+}

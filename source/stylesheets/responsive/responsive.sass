@@ -1,0 +1,254 @@
+$desktop: 1024px
+$tablet_large: 960px
+$tablet: 768px
+$palm: 640px
+$phone: 540px
+$mobile-phone: 480px
+$cell-phone: 320px
+
+@media screen and (max-width : $desktop)
+  .header__single__question
+    padding-left: 60px
+
+@media screen and (max-width : $tablet_large)
+  .header
+    padding: 20px 40px
+    padding-top: 50px
+
+  .question__bottom--right
+    padding-left: 20px
+    padding-right: 10px
+
+  .question__top
+    max-width: 100%
+
+  .wrapper
+    margin: 0
+
+  .header__single__question
+    padding-left: 120px
+
+  .modal__content,
+  .hottes__discussion--bg
+    padding-left: 40px
+    padding-right: 40px
+
+@media screen and (max-width : $tablet)
+  .header.header__allquestions
+    .header__left
+      width: 100%
+      float: none
+
+    .header__right
+      width: 100%
+      float: none
+      text-align: left
+      padding-bottom: 10px
+
+  .header__single__question
+    .header__left
+      width: 50%
+
+    .header__right
+      width: 50%
+
+  .qustions__filter
+    margin: 10px 0
+
+  .back__button
+    left: 20px
+
+  .header__single__question
+    padding-left: 90px
+
+  .question__bottom
+  
+    &--left
+      width: 70%
+
+    &--right
+      width: 30%
+
+  .question__bottom__col:not(.question__bottom__col--more)
+    .activities_role:after
+      background: $color_black
+
+  .single__question .question__bottom--right,
+  .comment__content--right
+    padding-right: 20px
+
+@media screen and (max-width : $palm)
+  .nav__search--left
+    width: 60%
+  .nav__search--right
+    width: 40%
+
+  .question__bottom
+    &--left
+      width: 65%
+    &--right
+      width: 35%
+
+  .header__single__question
+    .header__left
+      width: 100%
+      float: none
+
+    .header__right
+      display: none
+
+  .discusion__replies
+    padding-left: 0
+    border-left: 10px solid $color_gray
+
+  .comment__content
+    width: 100%
+    float: none
+    border-left: 0
+    padding-left: 0
+
+  .comment__content
+    &--left
+      width: 100%
+      float: none
+    &--right
+      width: 100%
+      float: none
+      text-align: right
+      padding-top: 0
+    &--entry
+      border-bottom: 1px solid $color_gray
+      padding-left: 70px
+
+    &--comment
+      padding: 20px
+
+  .comment__avatar
+    width: auto
+    position: absolute
+    top: 5px
+    left: 5px
+    padding: 0
+
+  .question__bottom--content
+    padding-left: 0
+
+  .discusion__replies .comment__wrapper .answer__button
+    transform: translateX(50%)
+
+  .user__accinfo
+    &--col
+      width: 100%
+      float: none
+      text-align: center
+      padding-bottom: 10px
+
+      &:last-child
+        text-align: center
+
+  .user__achivements
+    &--box
+      width: 50%
+
+  .user__main-content
+    padding: 0 30px
+
+@media screen and (max-width : $mobile-phone)
+  .qustion__bottom--blue
+    display: none
+
+  .question__bottom
+    &--left
+      width: 60%
+    &--right
+      width: 40%
+
+  .user__accinfo--col:last-child img
+    margin: 0 5px
+
+  .question__bottom__col--more
+    background: $color_gray
+
+  .user__accinfo
+    &--col
+      span
+        display: block
+
+  .modal__content,
+  .hottes__discussion--bg
+    padding-left: 20px
+    padding-right: 20px
+
+  .discussin__stats
+    padding: 20px
+    padding-right: 0
+
+    p
+      width: 50%
+      text-align: left
+      margin: 5px 0
+
+  .user__main-content
+    padding: 0
+
+  .user__achivements__header h2
+    font-size: 30px
+
+  .btn__slider
+    margin-top: 3px
+
+  .single__question
+    .question__bottom--left,
+    .question__bottom--right
+      width: 100%
+      float: none
+
+    .question__bottom--right
+      padding-bottom: 30px
+
+    .question-header p
+      font-size: 12px
+      text-transform: uppercase
+      letter-spacing: 0.5px
+      margin: 0
+      padding-left: 60px
+      margin-top: 21px
+      padding-bottom: 21px
+
+    .question-header,
+    .question-header--entry
+      width: 100%
+      float: none
+
+      h2
+        border-top: 1px solid #fff
+
+      .avatar-container
+        position: absolute
+        top: 0
+        left: 0
+
+    .question-header--entry
+      position: relative
+
+    .question__top
+      .button__wrapper
+        display: none
+
+
+@media screen and (max-width : $cell-phone)
+  .nav__search
+    &--left
+      width: 100%
+      float: none
+    &--right
+      width: 100%
+      float: none
+      padding-left: 0
+      padding-top: 10px
+
+  .question__bottom
+    &--left
+      width: 50%
+    &--right
+      width: 50%

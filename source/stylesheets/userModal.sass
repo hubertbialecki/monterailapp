@@ -1,0 +1,241 @@
+//modal
+.modal__content
+  max-width: $modal_width_inner
+  margin: auto
+
+.modal-dialog
+  max-width: $modal_width
+  width: 100%
+  margin: auto
+  background: $color_white
+  position: relative
+  z-index: 9999
+  margin-top: 25px
+  padding-top: 47px
+
+.modal__header
+  .close
+    position: absolute
+    top: 8px
+    right: 14px
+    +resetStyle()
+    +font(28px,$color_gray_font)
+
+.text-gray-uppercase
+  text-transform: uppercase
+  color: $color_gray_font
+  letter-spacing: 0.4px
+
+.user__thumb
+  text-align: center
+
+.user__name
+  text-align: center
+  +font(22px, $color_blue)
+  margin-top: 13px
+  margin-bottom: 10px
+  letter-spacing: 0.6px
+
+.user__accinfo
+  padding-bottom: 25px
+  border-bottom: 1px solid $color_gray_font
+  &--col
+    display: inline-block
+    width: 33.33%
+
+.user__accinfo--col:last-child
+  text-align: right
+
+  img
+    vertical-align: middle
+    margin-left: 9px
+
+.user__achivements--box
+  width: 25%
+  float: left
+  text-align: center
+  position: relative
+  height: 92px
+  padding-top: 16px
+  z-index: 10
+  margin: 20px 0
+
+  span
+    display: block
+    position: relative
+    z-index: 90
+
+  .achivement-number
+    font-size: 24px
+    font-weight: 700
+
+  .achivement-name
+    font-size: 16px
+    font-style: italic
+    margin-top: 10px
+
+
+  &:after
+    content: ''
+    height: 92px
+    background: $color_light_blue
+    position: absolute
+    top: 0
+    left: 50%
+    margin-left: -46px
+    z-index: 1
+    width: 92px
+
+.user__achivements--box.peers
+  &:after
+    transform: rotate(52deg)
+
+.user__achivements--box.discussions
+  &:after
+    transform: rotate(-11deg)
+
+.user__achivements--box.findings
+  &:after
+    transform: rotate(54deg)
+
+.user__achivements--box.questions
+  &:after
+    transform: rotate(11deg)
+
+
+.user__achivements__header
+  text-align: justify
+  display: flex
+  justify-content: space-between
+  padding-top: 15px
+  h2
+    +font(45px,$color_black)
+    font-style: italic
+    margin-top: 0px
+    display: inline-block
+
+.user__main-content
+  padding: 0 70px
+  text-align: center
+
+.related_users
+  padding-top: 35px
+  .text-gray-uppercase
+    margin-bottom: 12px
+
+.related_users__profiles
+  max-width: $modal_users_max_width
+  margin: auto
+
+  &--box
+    width: 33.33%
+    padding: 6px
+    float: left
+
+    h4
+      +font(16px, $color_blue)
+      padding: 0 20px
+      margin-top: 5px
+
+  &--box-inner
+    text-align: center
+  &--avatar
+    +linearGradient()
+    padding: 18px
+
+.hottest__discussion
+  text-align: center
+
+  h4
+    display: inline-block
+    margin: 0
+    +font(16px, $color_blue)
+
+  h5
+    margin: 0
+    margin-top: 3px
+    +font(22px, $color_blue)
+    letter-spacing: 0.5px
+    font-style: italic
+
+.hottes__discussion--bg
+  padding-bottom: 20px
+  margin-top: 53px
+  +linearGradient
+  position: relative
+
+  .author-avatar-img
+    position: absolute
+    left: 50%
+    margin-left: -25px
+    margin-top: -25px
+
+.hottes__discussion--bg--inner
+  padding-top: 25px
+
+  p
+    display: inline-block
+    margin-left: 5px
+    margin-bottom: 0
+    font-size: 14px
+
+.discussin__stats
+  padding-top: 16px
+  p
+    margin: 10px 19px
+    font-weight: 700
+    font-size: 18px
+    span
+      font-style: italic
+      font-weight: 400
+      font-size: 16px
+      margin-left: 10px
+
+
+
+.btn__slider
+  +resetStyle($color_gray)
+  width: 30px
+  height: 30px
+  border-radius: 50%
+  position: relative
+  display: inline-block
+  margin-top: 8px
+
+  &:before
+    content: ""
+    position: absolute
+    width: 2px
+    height: 10px
+    background-color: $color_white
+    top: 7px
+    left: 14px
+
+  &:after
+    content: ""
+    position: absolute
+    width: 2px
+    height: 10px
+    background-color: $color_white
+    bottom: 7px
+    left: 14px
+
+  &--next
+    background-color: $color_blue
+
+    &:before
+      transform: rotate(128deg)
+
+    &:after
+      transform: rotate(-128deg)
+
+  &--prev
+
+    &:before
+      transform: rotate(53deg)
+
+    &:after
+      transform: rotate(-53deg)
+
+    &:hover
+      background-color: $color_blue
