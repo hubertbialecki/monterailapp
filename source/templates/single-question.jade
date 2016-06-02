@@ -16,8 +16,8 @@ header.header.header__single__question
           .avatar-container
             a(ui-sref="user")
               img.author-avatar-img(
-                alt="{{singleQuestion.author.name}}" 
-                src="{{singleQuestion.author.avatar}}"
+                alt="{{ singleQuestion.author.name }}" 
+                ng-src="{{ singleQuestion.author.avatar }}"
               )
           .question-header
               p 
@@ -55,7 +55,7 @@ header.header.header__single__question
               .comment__avatar 
                 img.author-avatar-img(
                   alt="{{ comment.name }}" 
-                  src="{{ comment.avatar }}"
+                  ng-src="{{ comment.avatar }}"
                 )
               .comment__content
                 .comment__content--left
@@ -80,7 +80,7 @@ header.header.header__single__question
                 .comment__avatar 
                   img.author-avatar-img(
                     alt="{{ replie.name }}" 
-                    src="{{ replie.avatar }}"
+                    ng-src="{{ replie.avatar }}"
                   )
                 .comment__content
                   .comment__content--left

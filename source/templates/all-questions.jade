@@ -27,13 +27,25 @@ header.header.header__allquestions
               | All questions
       .qustions__filter.qustions__filter--sorting
         span Sort by:
-        button.text-button(type="button" ng-class="{active: getSorting() == 'recent'}" ng-click="setSorting('recent')") recent
+        button.text-button(
+          type="button" 
+          ng-class="{active: getSorting() == 'recent'}" 
+          ng-click="setSorting('recent')"
+        ) recent
         span or
-        button.text-button.text-button-right(type="button" ng-class="{active: getSorting() == 'hot'}" ng-click="setSorting('hot')") hot  
+        button.text-button.text-button-right(
+          type="button" 
+          ng-class="{active: getSorting() == 'hot'}" 
+          ng-click="setSorting('hot')"
+        ) hot  
     .clear
     .nav__search
       .nav__search--left
-        input.nav__search--input(ng-model="searchText" type='text' placeholder='Search questions')
+        input.nav__search--input(
+          ng-model="searchText" 
+          type='text' 
+          placeholder='Search questions'
+        )
       .nav__search--right
         button.nav__search--button(ng-click="filterSearch = searchText") Search
       .clear
@@ -45,8 +57,8 @@ header.header.header__allquestions
         .avatar-container
           a(ui-sref="user")
             img.author-avatar-img(
-              alt="{{question.author.name}}" 
-              src="{{question.author.avatar}}"
+              alt="{{ question.author.name }}" 
+              ng-src="{{ question.author.avatar }}"
             )
         .question-header
           p 
@@ -61,13 +73,13 @@ header.header.header__allquestions
             .question__bottom__col.question__bottom__col--first 
               p.activities_role asked
           .question__bottom--flex
-            .question__bottom__col.question__bottom__col--more( ng-show="question.user_involved.length > 5")
+            .question__bottom__col.question__bottom__col--more( ng-show="question.user_involved.length > 5" )
               span {{ question.user_involved.length - 5 }}
               p.activities_role more activities
             .question__bottom__col(ng-repeat="activities in question.user_involved")
               img.author-avatar-img(
-                alt="{{activities.name}}" 
-                src="{{activities.avatar}}"
+                alt="{{ activities.name }}" 
+                ng-src="{{ activities.avatar }}"
               )
               p.activities_role {{ activities.role }}
             .clear
@@ -82,4 +94,8 @@ header.header.header__allquestions
             span {{question.conversations}} 
             | conversations
     .load-questions__container
-      button.load-questions(type="button" ng-click="loadPosts()" ng-disabled="loadDisabled") load more questions
+      button.load-questions(
+      type="button" 
+      ng-click="loadPosts()" 
+      ng-disabled="loadDisabled"
+      ) load more questions

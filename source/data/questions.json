@@ -4,7 +4,7 @@
       "title":"Will insuline make my patient gain weight?",
       "author":{
          "name":"Eva",
-         "avatar":"./assets/images/avatar1.png"
+         "avatar":"/assets/images/avatar1.png"
       },
       "discusions":2,
       "peers":6,
@@ -15,37 +15,37 @@
          {
             "id":2,
             "name":"Eva",
-            "avatar":"./assets/images/avatar1.png",
+            "avatar":"/assets/images/avatar1.png",
             "role":"comment"
          },
          {
             "id":3,
             "name":"Andrew",
-            "avatar":"./assets/images/avatar4.png",
+            "avatar":"/assets/images/avatar4.png",
             "role":"comment"
          },
          {
             "id":4,
             "name":"Joseph",
-            "avatar":"./assets/images/avatar2.png",
+            "avatar":"/assets/images/avatar2.png",
             "role":"discusion"
          },
          {
             "id":2,
             "name":"Eva",
-            "avatar":"./assets/images/avatar1.png",
+            "avatar":"/assets/images/avatar1.png",
             "role":"comment"
          },
          {
             "id":3,
             "name":"Andrew",
-            "avatar":"./assets/images/avatar4.png",
+            "avatar":"/assets/images/avatar4.png",
             "role":"comment"
          },
          {
             "id":4,
             "name":"Joseph",
-            "avatar":"./assets/images/avatar2.png",
+            "avatar":"/assets/images/avatar2.png",
             "role":"discusion"
          }
       ],
@@ -59,7 +59,7 @@
       "title":"Will insuline make my patient gain weight?",
       "author":{
          "name":"Andrew",
-         "avatar":"./assets/images/avatar4.png"
+         "avatar":"/assets/images/avatar4.png"
       },
       "hot":1,
       "recent": 3,
@@ -70,19 +70,19 @@
          {
             "id":2,
             "name":"Eva",
-            "avatar":"./assets/images/avatar1.png",
+            "avatar":"/assets/images/avatar1.png",
             "role":"comment"
          },
          {
             "id":3,
             "name":"Andrew",
-            "avatar":"./assets/images/avatar4.png",
+            "avatar":"/assets/images/avatar4.png",
             "role":"comment"
          },
          {
             "id":4,
             "name":"Joseph",
-            "avatar":"./assets/images/avatar2.png",
+            "avatar":"/assets/images/avatar2.png",
             "role":"discusion"
          }
       ],
@@ -95,7 +95,7 @@
       "title":"Will insuline make my patient gain weight?",
       "author":{
          "name":"Joseph",
-         "avatar":"./assets/images/avatar2.png"
+         "avatar":"/assets/images/avatar2.png"
       },
       "hot":5,
       "recent": 6,
@@ -106,19 +106,19 @@
          {
             "id":2,
             "name":"Eva",
-            "avatar":"./assets/images/avatar1.png",
+            "avatar":"/assets/images/avatar1.png",
             "role":"comment"
          },
          {
             "id":3,
             "name":"Andrew",
-            "avatar":"./assets/images/avatar4.png",
+            "avatar":"/assets/images/avatar4.png",
             "role":"comment"
          },
          {
             "id":4,
             "name":"Joseph",
-            "avatar":"./assets/images/avatar2.png",
+            "avatar":"/assets/images/avatar2.png",
             "role":"discusion"
          }
       ],
@@ -131,7 +131,7 @@
       "title":"Will insuline make my patient gain weight?",
       "author":{
          "name":"Andrew",
-         "avatar":"./assets/images/avatar4.png"
+         "avatar":"/assets/images/avatar4.png"
       },
       "hot":2,
       "recent": 3,
@@ -142,19 +142,19 @@
          {
             "id":2,
             "name":"Eva",
-            "avatar":"./assets/images/avatar1.png",
+            "avatar":"/assets/images/avatar1.png",
             "role":"comment"
          },
          {
             "id":3,
             "name":"Andrew",
-            "avatar":"./assets/images/avatar4.png",
+            "avatar":"/assets/images/avatar4.png",
             "role":"comment"
          },
          {
             "id":4,
             "name":"Joseph",
-            "avatar":"./assets/images/avatar2.png",
+            "avatar":"/assets/images/avatar2.png",
             "role":"discusion"
          }
       ],
@@ -167,7 +167,7 @@
       "title":"Will insuline make my patient gain weight?",
       "author":{
          "name":"John",
-         "avatar":"./assets/images/avatar4.png"
+         "avatar":"/assets/images/avatar4.png"
       },
       "hot":5,
       "recent": 8,
@@ -178,19 +178,19 @@
          {
             "id":2,
             "name":"Eva",
-            "avatar":"./assets/images/avatar1.png",
+            "avatar":"/assets/images/avatar1.png",
             "role":"comment"
          },
          {
             "id":3,
             "name":"Andrew",
-            "avatar":"./assets/images/avatar4.png",
+            "avatar":"/assets/images/avatar4.png",
             "role":"comment"
          },
          {
             "id":4,
             "name":"Joseph",
-            "avatar":"./assets/images/avatar2.png",
+            "avatar":"/assets/images/avatar2.png",
             "role":"discusion"
          }
       ],
@@ -203,7 +203,7 @@
       "title":"Will insuline make my patient gain weight?",
       "author":{
          "name":"Andrew",
-         "avatar":"./assets/images/avatar4.png"
+         "avatar":"/assets/images/avatar4.png"
       },
       "discusions":2,
       "peers":6,
@@ -214,19 +214,19 @@
          {
             "id":2,
             "name":"Eva",
-            "avatar":"./assets/images/avatar1.png",
+            "avatar":"/assets/images/avatar1.png",
             "role":"comment"
          },
          {
             "id":3,
             "name":"Andrew",
-            "avatar":"./assets/images/avatar4.png",
+            "avatar":"/assets/images/avatar4.png",
             "role":"comment"
          },
          {
             "id":4,
             "name":"Joseph",
-            "avatar":"./assets/images/avatar2.png",
+            "avatar":"/assets/images/avatar2.png",
             "role":"discusion"
          }
       ],
@@ -239,7 +239,7 @@
       "title":"Will insuline make my patient gain weight?",
       "author":{
          "name":"Andrew",
-         "avatar":"./assets/images/avatar4.png"
+         "avatar":"/assets/images/avatar4.png"
       },
       "discusions":2,
       "peers":6,
@@ -250,19 +250,19 @@
          {
             "id":2,
             "name":"Eva",
-            "avatar":"./assets/images/avatar1.png",
+            "avatar":"/assets/images/avatar1.png",
             "role":"comment"
          },
          {
             "id":3,
             "name":"Andrew",
-            "avatar":"./assets/images/avatar4.png",
+            "avatar":"/assets/images/avatar4.png",
             "role":"comment"
          },
          {
             "id":4,
             "name":"Joseph",
-            "avatar":"./assets/images/avatar2.png",
+            "avatar":"/assets/images/avatar2.png",
             "role":"discusion"
          }
       ],
@@ -275,7 +275,7 @@
       "title":"Will insuline make my patient gain weight?",
       "author":{
          "name":"Andrew",
-         "avatar":"./assets/images/avatar4.png"
+         "avatar":"/assets/images/avatar4.png"
       },
       "hot":5,
       "recent": 1,
@@ -286,19 +286,19 @@
          {
             "id":2,
             "name":"Eva",
-            "avatar":"./assets/images/avatar1.png",
+            "avatar":"/assets/images/avatar1.png",
             "role":"comment"
          },
          {
             "id":3,
             "name":"Andrew",
-            "avatar":"./assets/images/avatar4.png",
+            "avatar":"/assets/images/avatar4.png",
             "role":"comment"
          },
          {
             "id":4,
             "name":"Joseph",
-            "avatar":"./assets/images/avatar2.png",
+            "avatar":"/assets/images/avatar2.png",
             "role":"discusion"
          }
       ],
@@ -311,7 +311,7 @@
       "title":"Will insuline make my patient gain weight?",
       "author":{
          "name":"Andrew",
-         "avatar":"./assets/images/avatar4.png"
+         "avatar":"/assets/images/avatar4.png"
       },
       "hot":5,
       "recent": 5,
@@ -322,19 +322,19 @@
          {
             "id":2,
             "name":"Eva",
-            "avatar":"./assets/images/avatar1.png",
+            "avatar":"/assets/images/avatar1.png",
             "role":"comment"
          },
          {
             "id":3,
             "name":"Andrew",
-            "avatar":"./assets/images/avatar4.png",
+            "avatar":"/assets/images/avatar4.png",
             "role":"comment"
          },
          {
             "id":4,
             "name":"Joseph",
-            "avatar":"./assets/images/avatar2.png",
+            "avatar":"/assets/images/avatar2.png",
             "role":"discusion"
          }
       ],

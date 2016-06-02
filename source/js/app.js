@@ -1,5 +1,5 @@
 var app = angular.module('MonterailApp', ['ui.router', 'ngAnimate', 'ngAnimate', 'angularModalService','ui.bootstrap' ]);
-app.factory('getData', function($http, $q) {
+app.factory('getData', function($http) {
   return {
     // emulating api behavior, content in different files
     getQuestions: function() {

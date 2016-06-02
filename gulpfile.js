@@ -1,17 +1,17 @@
 var gulp = require('gulp'),
     plugin = require('gulp-load-plugins')(),
-    del = require('del'),
-    sass = require('gulp-sass'); // load-plugins cannot load it with node-sass
+    clean = require('gulp-clean'),
+    sass = require('gulp-sass');
 
 var warn = function(err) { console.warn(err); };
 
-var paths           = {
+var paths = {
   public:  './public/',
   src: './source/'
 }
 
 gulp.task('default', [
-  'clean', 'build', 'watch', 'server'
+  'clean', 'build', 'server', 'watch'
 ]);
 
 gulp.task('build', [
@@ -30,9 +30,7 @@ gulp.task('server', function(){
 });
 
 gulp.task('clean', function(){
-  return del(paths.public).then(function(){
-    console.log(paths.public + " has been erased.")
-  });
+  return clean(['build'])
 });
 
 // =============
