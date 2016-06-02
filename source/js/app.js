@@ -1,132 +1,125 @@
 var app = angular.module('MonterailApp', ['ui.router', 'ngAnimate', 'ngAnimate', 'angularModalService','ui.bootstrap' ]);
 app.factory('getData', function($http, $q) {
   return {
+    // emulating api behavior, content in different files
     getQuestions: function() {
-      // the $http API is based on the deferred/promise APIs exposed by the $q service
-      // so it returns a promise for us by default
       return $http.get('/data/questions.json');
     },
     getDiscusion: function() {
-      // the $http API is based on the deferred/promise APIs exposed by the $q service
-      // so it returns a promise for us by default
       return $http.get('/data/discussions.json');
     },
     getUser: function() {
-      // the $http API is based on the deferred/promise APIs exposed by the $q service
-      // so it returns a promise for us by default
       return $http.get('/data/users.json');
     }
   };
 });
 
+//Controller for all questions
 app.controller('QuestionsController', function($scope, getData){
-  getData.getQuestions().then( function(response){
-    $scope.questions = response.data;
-  });
-  // $scope.loadPostsInit = function($scope){
-  //   var limit = 3;
-  //   offset = 0;
-  //   console.log($scope.allQuestions);
-  //   $scope.questions = $scope.allQuestions.slice(offset,limit);
-  // }
-  // $scope.loadPosts = function($scope){
-  //   var limit = 3;
-  //   offset = 3;
-  //   $scope.questions= $scope.questions.slice(offset,limit);
-  // }
-});
-
-app.controller('LoadController', function($scope, getData){
+  $scope.page = 1;
+  $scope.loadDisabled = false;
+  $scope.allQuestions = [];
+  $scope.sorting = 'recent';
+  var offset = 3;
   getData.getQuestions().then( function(response){
     $scope.allQuestions = response.data;
-    console.log($scope.allQuestions);
-  })
-  this.allQuestionsVar = $scope.allQuestions;
-  this.qustionsToLoad = [];
-  this.limit = 3;
-  this.offset = 0;
-  $scope.loadPostsInit = function($scope){
-    console.log('asd');
-    console.log(this.allQuestionsVar );
-    this.qustionsToLoad = this.allQuestionsVar.slice(this.offset,this.limit);
-    return this.qustionsToLoad;
-  }
-  $scope.loadPosts = function($scope){
-    console.log('asd');
-    this.qustionsToLoad = this.allQuestionsVar.slice(this.offset,this.limit);
-    return this.qustionsToLoad;
-  }
-});
-
-app.controller('SortingControler', function($scope){
+    $scope.loadPostsInit(1);
+  });
+  $scope.loadPostsInit = function(page){
+    $scope.questions = $scope.allQuestions.slice(0, page*offset);
+    $scope.page++;
+  };
+  $scope.loadPosts = function(page){
+    if(!$scope.loadDisabled){
+      $scope.questions = $scope.allQuestions.slice(0, $scope.page*offset);
+      $scope.page++;
+    }
+    if($scope.allQuestions.length < $scope.page*offset){
+      $scope.loadDisabled = true;
+    }
+  };
   $scope.setSorting = function(sorter){
     $scope.sorting = sorter;
-    console.log('sdf');
+    return $scope.sorting;
   };
   $scope.getSorting = function() {
     return $scope.sorting;
   };
 });
 
-app.controller('DiscusionsController', function($scope, getData){
+//Controller for discussion, need to be fixed, there is only one discussion
+app.controller('DiscusionsController', function($scope, getData ){
   getData.getDiscusion().then( function(response){
     $scope.discusions = response.data;
   });
+
+
 });
 
-app.controller('SingleQuestionsController', function($scope,  getData){
+//Controller for single question, need to be fixed, render only first element, should be given parameter with ID
+app.controller('SingleQuestionsController', function($scope, getData, $stateParams){
   getData.getQuestions().then( function(response){
-    $scope.questions = response.data.slice(0,1);
+    $scope.questions = response.data;
+    $scope.singleQuestion = $scope.getQuestionById($stateParams.questionId);
+    console.log($scope.singleQuestion);
   });
+
+  $scope.getQuestionById = function(id) {
+    for( var i=0; i < $scope.questions.length; i++ ){
+      if( $scope.questions[i].id == $stateParams.questionId ){
+        return $scope.questions[i];
+      }
+    }
+  };
+
+  $scope.questionVoted = false;
+  $scope.questionVotedUp = false;
+  $scope.questionVotedDown = false;
+
+  $scope.vote = function(question, value){
+    if(value == 'up' && ( !$scope.questionVoted )){
+      question.votes++;
+      $scope.questionVoted = true;
+      $scope.questionVotedUp = true;
+      $scope.questionVotedDown = false;
+    }
+    if(value == 'down' && ( !$scope.questionVoted )){
+      question.votes--;
+      $scope.questionVoted = true;
+      $scope.questionVotedDown = true;
+      $scope.questionVotedUp = false;
+    }
+    if(value == 'up' && ( $scope.questionVoted && $scope.questionVotedDown  && !$scope.questionVotedUp )){
+      question.votes++;
+      $scope.questionVoted = false;
+      $scope.questionVotedUp = true;
+    }
+    if(value == 'down' && ( $scope.questionVoted && $scope.questionVotedUp && !$scope.questionVotedDown )){
+      question.votes--;
+      $scope.questionVoted = false;
+      $scope.questionVotedDown = true;
+    }
+  }
 });
 
-
+//Controler for user view, need to be fixed, id of user should be given in function and request should be only for user with this id
 app.controller('UserController', function($scope, getData){
   getData.getUser().then( function(response){
     $scope.users = response.data;
   });
 });
 
-
-
-
-app.config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise("/main");
-  $stateProvider
-    // HOME STATE
-    .state('main', {
-        url: '/main',
-        templateUrl: 'templates/all-questions.html'
-    })
-
-    // Single qustions
-    .state('single', {
-        url: '/question',
-        templateUrl: 'templates/single-question.html'
-    })
-
-    // user modal
-    .state('user', {
-      url: '/user',
-    })
-});
-
+//Listening for state change, loads modal window throught all app
 app.run(function ($rootScope, $uibModal) {
-  /**
-   * Listen to the `$stateChangeStart` event
-   */
+  //Listen to the `$stateChangeStart` event
   $rootScope.$on('$stateChangeStart', function (event, toState) {
-    /**
-     * if the new state is not "user", then ignore it
-     */
+    // if the new state is not "user", return
     if(toState.name !== 'user') return;
-    /**
-     * Open the modal window
-     */
+    // open window
     $uibModal.open({
         templateUrl:'templates/user-modal.html',
         controller: function($scope){
-          // Do whatever you need here.
+          //empty controller
         }
       });
     /**
@@ -134,4 +127,28 @@ app.run(function ($rootScope, $uibModal) {
      */
     event.preventDefault();
   })
+});
+
+//Routing - loading templates depend on state
+app.config(function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise("/main");
+  $stateProvider
+    // HOME STATE
+    .state('main', {
+        url: '/main',
+        controller: 'QuestionsController',
+        templateUrl: 'templates/all-questions.html'
+    })
+
+    // Single qustions
+    .state('single', {
+        url: '/question/{questionId}',
+        controller: 'SingleQuestionsController',
+        templateUrl: 'templates/single-question.html'
+    })
+
+    // user modal
+    .state('user', {
+      url: '/user',
+    })
 });

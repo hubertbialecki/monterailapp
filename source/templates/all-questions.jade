@@ -1,4 +1,4 @@
-header.header(ng-controller="QuestionsController")
+header.header.header__allquestions
   .header--inner
     .header__left
       h1.entry-title Questions
@@ -25,11 +25,11 @@ header.header(ng-controller="QuestionsController")
             ) 
             label.radio-button--label(for="filter2")
               | All questions
-      .qustions__filter.qustions__filter--sorting(ng-controller="SortingControler as sortingControler")
+      .qustions__filter.qustions__filter--sorting
         span Sort by:
-        button.active.text-button(type="button" ng-click="sortingControler.setSorting('recent')") recent
+        button.text-button(type="button" ng-class="{active: getSorting() == 'recent'}" ng-click="setSorting('recent')") recent
         span or
-        button.text-button.text-button-right(type="button" ng-click="sortingControler.setSorting('hot')") hot  
+        button.text-button.text-button-right(type="button" ng-class="{active: getSorting() == 'hot'}" ng-click="setSorting('hot')") hot  
     .clear
     .nav__search
       .nav__search--left
@@ -38,9 +38,9 @@ header.header(ng-controller="QuestionsController")
         button.nav__search--button(ng-click="filterSearch = searchText") Search
       .clear
         
-.wrapper(ng-controller="QuestionsController")
+.wrapper
   .wrapper--inner
-    .question(ng-repeat="question in questions | filter: filterSearch ")
+    .question(ng-repeat="question in questions | filter: filterSearch | orderBy: getSorting() ")
       .question__top
         .avatar-container
           a(ui-sref="user")
@@ -50,10 +50,10 @@ header.header(ng-controller="QuestionsController")
             )
         .question-header
           p 
-            a.author-name {{ question.author.name }}
+            a.author-name(ui-sref="user") {{ question.author.name }}
             |  IS ASKING
           h2 
-            a(ui-sref="single") {{question.title}}
+            a(ui-sref="single({questionId: question.id})") {{question.title}}
         .clear
       .question__bottom
         .question__bottom--left
@@ -82,4 +82,4 @@ header.header(ng-controller="QuestionsController")
             span {{question.conversations}} 
             | conversations
     .load-questions__container
-      button.load-questions(type="button" ng-click="loadController.loadPosts()") load more questions
+      button.load-questions(type="button" ng-click="loadPosts()" ng-disabled="loadDisabled") load more questions
