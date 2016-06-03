@@ -1,3 +1,6 @@
+#Intro
+Here is my app for your Junior Front-end developer reqruitment process. If you have any questions fell free to contact me bt email - bialecki.hubert@gmail.com
+
 **Task 1: Implement views**
 
 I've implemented views. I've used font Cuprum. 
