@@ -33,7 +33,7 @@ I've implemented voting only on single qustion. By default questions aren't vote
 
 I've added routing, single question is recieved based on question's id. Users, as I've mentioned before, are fixed and only one user is in users.json.
 
-## Usage
+## Run app
     $ npm install
     $ gulp
     $ app runs on localhost:8888/
