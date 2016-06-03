@@ -56,7 +56,7 @@ app.controller('DiscusionsController', function($scope, getData ){
 
 });
 
-//Controller for single question, need to be fixed, render only first element, should be given parameter with ID
+//Controller for single question
 app.controller('SingleQuestionsController', function($scope, getData, $stateParams){
   getData.getQuestions().then( function(response){
     $scope.questions = response.data;
@@ -71,30 +71,32 @@ app.controller('SingleQuestionsController', function($scope, getData, $statePara
     }
   };
 
+  //Voting 
+
   $scope.questionVoted = false;
   $scope.questionVotedUp = false;
   $scope.questionVotedDown = false;
 
-  $scope.vote = function(question, value){
+  $scope.vote = function(singleQuestion, value){
     if(value == 'up' && ( !$scope.questionVoted )){
-      question.votes++;
+      singleQuestion.votes++;
       $scope.questionVoted = true;
       $scope.questionVotedUp = true;
       $scope.questionVotedDown = false;
     }
     if(value == 'down' && ( !$scope.questionVoted )){
-      question.votes--;
+      singleQuestion.votes--;
       $scope.questionVoted = true;
       $scope.questionVotedDown = true;
       $scope.questionVotedUp = false;
     }
     if(value == 'up' && ( $scope.questionVoted && $scope.questionVotedDown  && !$scope.questionVotedUp )){
-      question.votes++;
+      singleQuestion.votes++;
       $scope.questionVoted = false;
       $scope.questionVotedUp = true;
     }
     if(value == 'down' && ( $scope.questionVoted && $scope.questionVotedUp && !$scope.questionVotedDown )){
-      question.votes--;
+      singleQuestion.votes--;
       $scope.questionVoted = false;
       $scope.questionVotedDown = true;
     }

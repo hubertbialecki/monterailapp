@@ -26,8 +26,8 @@ header.header.header__single__question
               h2 
                 a {{singleQuestion.title}}
         .button__wrapper
-          button.button__follow(type="button" ng-click="question.follow = false" ng-show="singleQuestion.follow") unfollow
-          button.button__follow(type="button" ng-click="question.follow = true" ng-hide="singleQuestion.follow") follow
+          button.button__follow(type="button" ng-click="singleQuestion.follow = false" ng-show="singleQuestion.follow") unfollow
+          button.button__follow(type="button" ng-click="singleQuestion.follow = true" ng-hide="singleQuestion.follow") follow
         
         .clear
       .single__question__bottom
@@ -39,8 +39,8 @@ header.header.header__single__question
           .vote-button__container
             span {{ singleQuestion.votes }} upvotes
             .arrows__wrapper
-              button.vote__button.vote__button--up(type="button" ng-disabled="questionVoted && questionVotedUp" ng-click="vote(question, 'up')")
-              button.vote__button.vote__button--down(type="button" ng-disabled="questionVoted && questionVotedDown" ng-click="vote(question, 'down')")
+              button.vote__button.vote__button--up(type="button" ng-disabled="questionVoted && questionVotedUp" ng-click="vote(singleQuestion, 'up')")
+              button.vote__button.vote__button--down(type="button" ng-disabled="questionVoted && questionVotedDown" ng-click="vote(singleQuestion, 'down')")
         .clear
         button.answer__button(type="button") GIVE new answer 
     
@@ -52,11 +52,12 @@ header.header.header__single__question
         div.discussion_list(ng-repeat="discusion in discusions")
           .discussion__comment(ng-repeat="comment in discusion.comments") 
             .comment__wrapper(ng-class="comment.replies.length > 0 ? 'replied' : 'no__replies'")
-              .comment__avatar 
-                img.author-avatar-img(
-                  alt="{{ comment.name }}" 
-                  ng-src="{{ comment.avatar }}"
-                )
+              .comment__avatar
+                a(ui-sref="user")
+                  img.author-avatar-img(
+                    alt="{{ comment.name }}" 
+                    ng-src="{{ comment.avatar }}"
+                  )
               .comment__content
                 .comment__content--left
                   .comment__content--entry
@@ -78,10 +79,11 @@ header.header.header__single__question
             .discusion__replies(ng-show="comment.replies.length > 0")
               .comment__wrapper(ng-repeat="replie in comment.replies" ng-class="replie.replies.length > 0 ? 'replied' : 'no__replies'")
                 .comment__avatar 
-                  img.author-avatar-img(
-                    alt="{{ replie.name }}" 
-                    ng-src="{{ replie.avatar }}"
-                  )
+                  a(ui-sref="user")
+                    img.author-avatar-img(
+                      alt="{{ replie.name }}" 
+                      ng-src="{{ replie.avatar }}"
+                    )
                 .comment__content
                   .comment__content--left
                     .comment__content--entry

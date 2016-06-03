@@ -1,0 +1,85 @@
+//comments
+.discusion__replies
+  padding-left: 90px
+
+.button__wrapper
+  float: right
+  width: 25%
+  text-align: right
+  padding-right: 68px
+  padding-top: 18px
+
+.comment__avatar
+  width: 90px
+  float: left
+  text-align: center
+  padding-top: 15px
+
+.comment__content
+  width: calc(100% - 90px)
+  float: left
+  padding-left: 19px
+  border-bottom: 1px solid $color_gray
+  border-left: 1px solid $color_gray
+
+.comment__content
+  &--left
+    width: 75%
+    float: left
+  &--right
+    width: 25%
+    float: left
+    text-align: right
+    padding-right: 45px
+    padding-top: 30px
+
+  &--comment
+    p
+      margin-top: 0
+
+.comment__content--entry
+  h4
+    display: inline-block
+  a
+    +font(16px, $color_blue)
+    text-decoration: none
+  .text-gray-uppercase
+    font-size: 12px
+    margin: 0 5px
+    &:after
+      content: ''
+      display: inline-block
+      width: 4px
+      height: 4px
+      border-radius: 50%
+      background: $color_gray_font
+      vertical-align: middle
+
+.discussion__comment
+  margin-bottom: 50px
+
+.comment__wrapper
+  position: relative
+  background: $color_white
+  box-shadow: 0px -2px 8px #f7f7f7
+  z-index: 10
+
+  &.no__replies
+    .comment__content
+      padding-bottom: 40px
+
+  .answer__button
+    right: 50%
+    left: auto
+    transform: translateX(50%)
+    z-index: 10
+
+.discusion__replies
+  .comment__wrapper
+    position: relative
+    z-index: 9
+
+    .answer__button
+      right: 50%
+      left: auto
+      transform: translateX(calc(50% - 45px))
